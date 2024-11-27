@@ -1,0 +1,591 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+/* END of Reset */
+
+:root {
+  /* Colors for the webpage */
+  --white: #fff;
+  --black: #000;
+  --light-gray: #ced4e2;
+
+  --light-blue: #bdc7de;
+  --blue: #3960e2;
+
+  --red: #c9015f;
+
+  --green: #137c3e;
+}
+
+/* Generic styling */
+
+a {
+  text-decoration: none;
+}
+
+.heading {
+  font-weight: 600;
+  text-shadow: 0px 3px 10px rgba(189,199,222,0.9);
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  letter-spacing: 2px;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+}
+
+.h1-heading {
+  font-size: 8rem;
+  letter-spacing: 2px;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+}
+
+.h2-heading {
+  font-size: 4.5rem;
+}
+
+.main {
+  width: 80%;
+  margin: 6rem auto 2rem auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s linear;
+}
+
+.section {
+  width: 100%;
+  margin: 5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.m-3-top {
+  margin-top: 3rem;
+}
+
+/* Showing and hiding elements on the webpage */
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+/* End of Showing and hiding elements on the webpage */
+
+
+/* Cards styling */
+
+.card {
+  width: 31%;
+  height: 65rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 1rem;
+  box-shadow: 0 1px .5rem var(--light-blue);
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  margin-bottom: 5rem;
+  transform: translateY(0);
+  transition: all .4s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1px 1.5rem var(--light-gray);;
+}
+
+.card:hover .img-container {
+  opacity: 1;
+}
+
+.img-container {
+  width: 100%;
+  height: 60%;
+  border: 1px solid transparent;
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+  border-bottom: 2px solid var(--light-gray);
+  opacity: 0.7;
+  transition: opacity .4s ease-in-out;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  width: 100%;
+  height: 40%;
+  padding: 2rem 1.5rem;
+}
+
+.card-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.card-text {
+  font-size: 1.8rem;
+  margin: 1.5rem 0;
+  width: 95%;
+  height: 30%;
+}
+
+.card-btn {
+  display: inline-block;
+  margin: 2rem auto;
+  width: 30%;
+  height: 6rem;
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  /* background-color: #2e008a; */
+  background-color: var(--blue);
+  color: var(--white);
+  text-align: center;
+  padding-top: 1.9rem;
+  font-size: 1.8rem;
+  box-shadow: 0 2px .5rem var(--light-gray);
+  transition: all .4s ease-out;
+  
+}
+
+.card-btn:hover {
+  background-color: var(--light-gray);
+  color: #3960e2;
+  box-shadow: 0 2px 1.5rem var(--light-gray);
+  border: 1px solid var(--blue);
+} /* End of Cards styling */
+
+
+/* External check section styling */
+
+.section-exterior-check {
+  min-height: 80vh;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+}
+.exterior-container-box {
+  width: 48%;
+  min-height: 80vh;
+  
+}
+
+.exterior-building {
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url(../img/outdoors-2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+}
+
+.exterior-area {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: 4rem;
+  font-weight: 600;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.hover-img {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: .5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  background-image: none;
+  transition: opacity 0.6s linear, visibility 0.6s linear; 
+}
+
+.exterior-dumpster {
+  top: 1rem;
+  left: 1rem;
+}
+
+/* for hover over the number 1 for dumpster */
+.exterior-dumpster:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/external/external-img-1.png);
+}
+
+/* for hover over the number 2 for landscape */
+.exterior-landscape:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/external/external-img-2.png);
+}
+
+/* for hover over the number 3 for drain */
+.exterior-drain:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/external/external-img-3.png);
+}
+
+/* for hover over the number 4 for old equipment */
+.exterior-building-maintenance:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/external/external-img-4.png);
+}
+
+/* for hover over the number 5 for building maintenance */
+.exterior-old-equipment:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/external/external-img-5.png);
+}
+
+/* for hover over the number 6 for general external checks */
+.exterior-general:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/external/external-img-6.png);
+}
+
+/* Show images after hover over the number */
+/* .exterior-area::after { 
+  content: ' ';
+  position: absolute;
+  top: 3rem;
+  left: 12rem;
+  width: 47rem;
+  height: 34rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s linear;
+}
+
+.exterior-dumpster::after {
+  background-image: url(../img/overflowing-bin.webp);
+}
+
+.exterior-dumpster:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+.exterior-landscape::after {
+  background-image: url(../img/landscape-litter.jpg);
+}
+
+.exterior-landscape:hover::after {
+  opacity: 1;
+  visibility: visible;
+} */
+
+
+/* This bit is for the click event listener */
+.hover-img-js {
+  opacity: 1;
+  visibility: visible;
+}  
+
+.exterior-landscape {
+  top: 1rem;
+  right: 1rem;
+}
+
+.exterior-drain {
+  top: 7rem;
+  left: 65%;
+  z-index: 10;
+}
+
+.exterior-building-maintenance {
+  top: 45%;
+  left: 6rem;
+}
+
+.exterior-old-equipment {
+  top: 65%;
+  left: 8rem;
+}
+
+.exterior-general {
+  top: 70%;
+  left: 70%;
+}
+
+.exterior-options {
+  padding: 2rem;
+}
+
+.external-options-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.external-options-list-item {
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+  font-size: 2.6rem;
+  position: relative;
+  width: 100%;
+}
+.item-description {
+  width: 100%;
+  display: flex;
+}
+
+.read-more-button {
+  display: block;
+  margin: 1.5rem 1rem 1rem auto;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  background-color: var(--red);
+  border-radius: .5rem;
+  font-size: 1.6rem;
+  color: var(--white);
+  box-shadow: 0 2px 1.5rem var(--light-gray);
+  border: none;
+  cursor: pointer;
+}
+
+.info-details {
+  cursor: pointer;
+  color: red;
+  font-size: 2rem;
+}
+
+.img-icon {
+   margin-left: 2.5rem;
+   cursor: pointer;
+   transform: scale(0.85);
+   transition: all 0.3s linear;
+}
+
+.img-icon:hover {
+  transform: scale(1);
+  box-shadow: 0 2px .5rem var(--light-gray);
+}
+
+.see-more {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  font-size: 2rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: .6rem;
+  background-color: var(--light-gray);
+  z-index: 200;
+  /* transform: translateY(-10rem); */
+  max-height: 0; /* Start with zero height */
+  opacity: 0;
+  /* visibility: hidden; */
+  overflow: hidden; /* Prevents content overflow */
+  transition: all 0.8s ease-in;
+}
+
+.see-more.active {
+  max-height: 60vh; /* Enough space for full content */
+  opacity: 1;
+  transition: all 0.8s ease-in;
+}
+
+.see-more-title {
+  font-size: 2.2rem;
+}
+
+
+.item-number {
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--red);
+  columns: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+
+/* End of external check section styling */
+
+/* Modal styling */
+.modal-section {
+  position: fixed;
+  top: -4rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: all 0.4s linear;
+  z-index: 200;
+  overflow: hidden;
+}
+
+.modal-container {
+  background: var(--white);
+  border: 2px solid var(--blue);
+  border-radius: 2rem;
+  width: 80%;
+  margin-top: 6rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-container::-webkit-scrollbar {
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  width: 1.5rem;
+  background: var(--light-gray);
+}
+
+.modal-header {
+  width: 100%;
+  height: 20rem;
+  /* background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0, 0.4)), url(../img/rats.jpg); */
+  
+  border-radius: 2rem 2rem 0 0;
+  position: relative;
+}
+
+.modal-reader-pests {
+  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0, 0.4)), url(../img/rats.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.closing-mark {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.4rem;
+  font-size: 4.2rem;
+  transform: scale(0.75);
+  color: var(--red);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .3s linear;
+}
+
+.closing-mark:hover {
+  transform: scale(1);
+}
+
+.modal-body {
+  width: 90%;
+  /* height: 80rem; */
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 3.2rem;
+  margin: 2.5rem 0;
+  text-shadow: 0px 3px 10px rgba(189,199,222,0.9);
+}
+
+.modal-text {
+  font-size: 2.4rem;
+  margin-bottom: 3.5rem;
+}
+
+.list-issues {
+  font-size: 2rem;
+}
+
+.list-title {
+  font-size: 2.6rem;
+  margin-bottom: .4rem;
+}
+
+.list-text {
+  margin-bottom: .6rem;
+}
+
+.list-item {
+  margin-bottom: 0.6rem;
+}
+
+.issue {
+  font-weight: 700;
+  color: var(--red);
+}
+
+.conclusion {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.modal-list {
+  list-style-type: none;
+}
+
+.modal-list li {
+  font-size: 2rem;
+  margin-bottom: .9rem;
+}
+
+.modal-list li h6 {
+  font-size: 2.2rem;
+  margin-bottom: .2rem;
+}
+
+.module-key-signs-heading {
+  margin: 3.5rem 0;
+}
+
+.module-key-signs-heading {
+  font-size: 2.8rem;
+  font-weight: 600;
+  text-shadow: 0px 3px 10px rgba(189,199,222,0.9);
+}
+
+
+
+
