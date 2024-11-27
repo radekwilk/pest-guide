@@ -2,12 +2,14 @@
 const ratCard = document.getElementById('rat-card');
 const cardBtn = document.querySelectorAll('.card-btn')
 
+// modal for pest issues
 const mainHeading = document.getElementById('main-heading');
 const closeRat = document.getElementById('close-rat');
 const closeBtn = document.getElementById('close-btn');
 const main = document.getElementById('main');
 const ratModal = document.getElementById('rat-modal');
 const seeMoreTitle = document.querySelector('.see-more-title');
+const closeFooterBtnRat = document.getElementById('rat-footer-close-btn')
 
 // modal for external issues:
 const extModalHeader = document.getElementById('modal-header-external')
@@ -17,6 +19,7 @@ const extModalListContainer = document.getElementById('modal-list-issues-externa
 const extModalFooterText = document.getElementById('modal-footer-text-external')
 const extModalSection = document.getElementById('external-issues-modal')
 const hoverImage = document.getElementById('hover-img')
+const closeFooterBtn = document.getElementById('footer-close-btn')
 
 const hoverImgStatus = {
     btnClicked: 0,
@@ -60,21 +63,25 @@ const externalIssues = {
         keySigns: [
             {
                 signType: 'Droppings',
-                signDescription: 'Look for rodent or insect droppings around the dumpster, as this can indicate active pests.'
+                signDescription: 'Look for rodent or insect droppings around the dumpster, as this can indicate active pests.',
+                signsImg: ['images.png', 'images.png']
             },
 
             {
                 signType: 'Gnaw marks',
-                signDescription: 'Rats or mice often chew on dumpster lids or edges. Gnaw marks on these surfaces are sign of rodent activity'
+                signDescription: 'Rats or mice often chew on dumpster lids or edges. Gnaw marks on these surfaces are sign of rodent activity',
+                signsImg: ['images.png']
             },
 
             {
                 signType: 'Odors and stains',
-                signDescription: 'Unusual odors or grease stains can attract pests. These are often left behind by pests marking their territory. '
+                signDescription: 'Unusual odors or grease stains can attract pests. These are often left behind by pests marking their territory. ',
+                signsImg: []
             },
             {
                 signType: 'Nest materials',
-                signDescription: 'Rodents may create nests in secluded areas around dumpsters. Look for materials like shredded paper, leaves, or fabrics nearby.'
+                signDescription: 'Rodents may create nests in secluded areas around dumpsters. Look for materials like shredded paper, leaves, or fabrics nearby.',
+                signsImg: ['images.png', 'images.png', 'images.png']
             },
 
         ]
@@ -108,30 +115,36 @@ const externalIssues = {
         keySigns: [
             {
                 signType: 'Burrows and holes',
-                signDescription: 'Look for small burrows, especially near the building foundation, which could indicate rodents or other burrowing pests.'
+                signDescription: 'Look for small burrows, especially near the building foundation, which could indicate rodents or other burrowing pests.',
+                signsImg: ['images.png']
             },
 
             {
                 signType: 'Gnaw marks',
-                signDescription: 'Rodents may chew on outdoor furniture, planters, or building materials. Check for gnaw marks on nearby wood, wiring, or plants.'
+                signDescription: 'Rodents may chew on outdoor furniture, planters, or building materials. Check for gnaw marks on nearby wood, wiring, or plants.',
+                signsImg: ['images.png', 'images.png']
             },
 
             {
                 signType: 'Droppings',
-                signDescription: 'Search for droppings along the pathways, under bushes, and around outdoor waste bins, which can indicate the presence of rodents or other pests.  '
+                signDescription: 'Search for droppings along the pathways, under bushes, and around outdoor waste bins, which can indicate the presence of rodents or other pests.  ',
+                signsImg: ['images.png', 'images.png', 'images.png']
             },
             {
                 signType: 'Standing water',
-                signDescription: 'Flies breed in standing water. Check for water build up in flower pots, clogged gutters, blocked drains or any other standing water around the restaurant.'
+                signDescription: 'Flies breed in standing water. Check for water build up in flower pots, clogged gutters, blocked drains or any other standing water around the restaurant.',
+                signsImg: ['images.png', ]
             },
 
             {
                 signType: 'Nests',
-                signDescription: 'Look in bushes and around old equipment which might be left outdoors. It can provide shelter and harbouring conditions for rodents.'
+                signDescription: 'Look in bushes and around old equipment which might be left outdoors. It can provide shelter and harbouring conditions for rodents.',
+                signsImg: ['images.png', ]
             },
             {
                 signType: 'Food sources',
                 signDescription: 'Food debris, spilled food or litter can attract pests. Advice proper cleanliness if issues observed. '
+                ,signsImg: ['images.png', 'images.png', 'images.png']
             },
 
         ]
@@ -303,9 +316,31 @@ closeRat.addEventListener('click', ()=> {
 })
 
 closeBtn.addEventListener('click',()=> {
-    extModalSection.classList.remove('show')
-    extModalSection.classList.add('hide')
+    // extModalSection.classList.remove('show')
+    // extModalSection.classList.add('hide')
+    closeModal(extModalSection)
 })
+
+closeFooterBtn.addEventListener('click', (event) => {
+    event.preventDefault()
+    closeModal(extModalSection)
+})
+
+closeFooterBtnRat.addEventListener('click',(event)=> {
+    event.preventDefault()
+    main.classList.remove('hide')
+    main.classList.add('show')
+    mainHeading.classList.remove('hide')
+    mainHeading.classList.add('show')
+    ratModal.classList.remove('show')
+    ratModal.classList.add('hide')
+})
+
+// function to close the modal
+function closeModal(modalName) {
+    modalName.classList.remove('show')
+    modalName.classList.add('hide')
+}
 
 // This event listener is listen for clicks on the external issues list info icon
 document.querySelectorAll('.img-icon').forEach((el)=> {
@@ -456,6 +491,30 @@ class IssueListRenderer {
             // Append H6 and P elements to the LI element
             liElement.appendChild(titleElement);
             liElement.appendChild(textElement);
+
+
+
+            // Check if signsImg array is not empty
+            if (keySign.signsImg && keySign.signsImg.length > 0) {
+                // Create a container for the images
+                const imageContainer = document.createElement('div');
+                imageContainer.className = 'image-container';
+
+                // Loop through the first 3 images in the signsImg array
+                keySign.signsImg.slice(0, 3).forEach(imgSrc => {
+                    const imgElement = document.createElement('img');
+                    const imgPath = `/img/external/${imgSrc}` //set the path of the image
+                    imgElement.src = imgPath; // Set the source of the image
+                    imgElement.alt = `Image for ${keySign.signType}`; // Add alt text
+                    imgElement.className = 'sign-image'; // Add a class for styling
+
+                    // Append the image to the container
+                    imageContainer.appendChild(imgElement);
+                });
+
+            // Append the image container to the LI element
+            liElement.appendChild(imageContainer);
+        }
 
             // Append the LI element to the UL
             ulKeyIssuesContainer.appendChild(liElement);
