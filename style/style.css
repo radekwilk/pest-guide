@@ -475,6 +475,7 @@ a {
 .sign-image:hover {
   transform: scale(1);
   opacity: 1;
+  cursor: zoom-in;
 }
 
 /* End of external check section styling */
@@ -485,7 +486,7 @@ a {
   top: -4rem;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% + 4rem);
   background-color: rgba(0,0,0,0.7);
   display: flex;
   justify-content: center;
@@ -505,11 +506,26 @@ a {
   overflow-y: auto;
 }
 
+/* for the modal with the image to display */
+.modal-container-full-img {
+  height: 65vh;
+  align-self: center;
+  width: 50%;
+  z-index: 100;
+}
+
 .modal-container::-webkit-scrollbar {
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
   width: 1.5rem;
   background: var(--light-gray);
+}
+
+.modal-container-full-img::-webkit-scrollbar {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 0;
+  background: none;
 }
 
 .modal-header {
@@ -542,6 +558,19 @@ a {
 
 .closing-mark:hover {
   transform: scale(1);
+}
+
+.closing-mark-img {
+  top: 23rem;
+  right: 49rem;
+  background-color: var(--light-gray);
+  border-radius: 50%;
+  padding: .2rem;
+  width: 6.5rem;
+  height: 6.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-body {
@@ -636,4 +665,10 @@ a {
   cursor: pointer;
 }
 
+.full-img {
+  width: 100%;
+  height: 102%;
+  object-fit: cover;
+  overflow: hidden;
+}
 

@@ -21,6 +21,10 @@ const extModalSection = document.getElementById('external-issues-modal')
 const hoverImage = document.getElementById('hover-img')
 const closeFooterBtn = document.getElementById('footer-close-btn')
 
+// Image display Modal
+const imgDisplayModal = document.getElementById('img-display-modal')
+const closeImgModal = document.getElementById('close-btn-img')
+
 const hoverImgStatus = {
     btnClicked: 0,
     displayed: false
@@ -62,15 +66,15 @@ const externalIssues = {
         keySignsHeading: 'What auditor should look for:',
         keySigns: [
             {
-                signType: 'Droppings',
-                signDescription: 'Look for rodent or insect droppings around the dumpster, as this can indicate active pests.',
-                signsImg: ['images.png', 'images.png']
+                signType: 'Droppings or maggots',
+                signDescription: 'Look for rodent or insect droppings around the dumpster, as this can indicate active pests. Presence of maggots will indicate flies infestation.',
+                signsImg: ['droppings-1.jpg', 'droppings-2.jpg', 'maggots.jpg']
             },
 
             {
                 signType: 'Gnaw marks',
                 signDescription: 'Rats or mice often chew on dumpster lids or edges. Gnaw marks on these surfaces are sign of rodent activity',
-                signsImg: ['images.png']
+                signsImg: ['external-gnaw-mark-1.png','external-gnaw-mark-2.jpg', 'external-gnaw-mark-3.jpg']
             },
 
             {
@@ -80,8 +84,8 @@ const externalIssues = {
             },
             {
                 signType: 'Nest materials',
-                signDescription: 'Rodents may create nests in secluded areas around dumpsters. Look for materials like shredded paper, leaves, or fabrics nearby.',
-                signsImg: ['images.png', 'images.png', 'images.png']
+                signDescription: 'Rodents may create nests in secluded areas around dumpsters. Look for materials like shredded paper, leaves, or fabrics nearby. For example, brown rats are well known for digging and excavating extensive burrow systems for shelter, food storage and nesting',
+                signsImg: ['external-burrow.jpg']
             },
 
         ]
@@ -116,35 +120,35 @@ const externalIssues = {
             {
                 signType: 'Burrows and holes',
                 signDescription: 'Look for small burrows, especially near the building foundation, which could indicate rodents or other burrowing pests.',
-                signsImg: ['images.png']
+                signsImg: ['burrow-1.jpg', 'burrow-2.jpg', 'burrow-3.jpg']
             },
 
             {
                 signType: 'Gnaw marks',
                 signDescription: 'Rodents may chew on outdoor furniture, planters, or building materials. Check for gnaw marks on nearby wood, wiring, or plants.',
-                signsImg: ['images.png', 'images.png']
+                signsImg: ['chew-marks.jpg', 'marks-on-wood.jpg', 'rat-chewed-wires.jpg']
             },
 
             {
                 signType: 'Droppings',
                 signDescription: 'Search for droppings along the pathways, under bushes, and around outdoor waste bins, which can indicate the presence of rodents or other pests.  ',
-                signsImg: ['images.png', 'images.png', 'images.png']
+                signsImg: ['landscape-droppings.jpg']
             },
             {
                 signType: 'Standing water',
                 signDescription: 'Flies breed in standing water. Check for water build up in flower pots, clogged gutters, blocked drains or any other standing water around the restaurant.',
-                signsImg: ['images.png', ]
+                signsImg: ['standing-water.jpg', ]
             },
 
             {
                 signType: 'Nests',
                 signDescription: 'Look in bushes and around old equipment which might be left outdoors. It can provide shelter and harbouring conditions for rodents.',
-                signsImg: ['images.png', ]
+                signsImg: ['landscape-back-yard.jpeg', ]
             },
             {
                 signType: 'Food sources',
                 signDescription: 'Food debris, spilled food or litter can attract pests. Advice proper cleanliness if issues observed. '
-                ,signsImg: ['images.png', 'images.png', 'images.png']
+                ,signsImg: ['food-source-1.jpeg', 'food-source-2.jpg', 'food-source-3.jpeg']
             },
 
         ]
@@ -278,10 +282,12 @@ const pestInfo = {
 cardBtn.forEach(btn => {
 
     btn.addEventListener('click', ()=> {
-        main.classList.remove('show')
-       main.classList.add('hide')
-       mainHeading.classList.remove('show')
-       mainHeading.classList.add('hide')
+    //    main.classList.remove('show')
+    //    main.classList.add('hide')
+    //    mainHeading.classList.remove('show')
+    //    mainHeading.classList.add('hide')
+
+       hideMainContainer(main, mainHeading)
        ratModal.classList.remove('hide')
        ratModal.classList.add('show')
 
@@ -307,39 +313,61 @@ cardBtn.forEach(btn => {
 
 // This is the button to close the modal for cards
 closeRat.addEventListener('click', ()=> {
-    main.classList.remove('hide')
-    main.classList.add('show')
-    mainHeading.classList.remove('hide')
-    mainHeading.classList.add('show')
-    ratModal.classList.remove('show')
-    ratModal.classList.add('hide')
+    // main.classList.remove('hide')
+    // main.classList.add('show')
+    // mainHeading.classList.remove('hide')
+    // mainHeading.classList.add('show')
+    // ratModal.classList.remove('show')
+    // ratModal.classList.add('hide')
+
+    showMainContainer(main, mainHeading)
+    closeModal(ratModal)
 })
 
 closeBtn.addEventListener('click',()=> {
     // extModalSection.classList.remove('show')
     // extModalSection.classList.add('hide')
+    showMainContainer(main, mainHeading)
     closeModal(extModalSection)
 })
 
 closeFooterBtn.addEventListener('click', (event) => {
     event.preventDefault()
+    showMainContainer(main, mainHeading)
     closeModal(extModalSection)
 })
 
 closeFooterBtnRat.addEventListener('click',(event)=> {
     event.preventDefault()
-    main.classList.remove('hide')
-    main.classList.add('show')
-    mainHeading.classList.remove('hide')
-    mainHeading.classList.add('show')
-    ratModal.classList.remove('show')
-    ratModal.classList.add('hide')
+    // main.classList.remove('hide')
+    // main.classList.add('show')
+    // mainHeading.classList.remove('hide')
+    // mainHeading.classList.add('show')
+
+    showMainContainer(main, mainHeading)
+    closeModal(ratModal)
+    // ratModal.classList.remove('show')
+    // ratModal.classList.add('hide')
 })
 
 // function to close the modal
 function closeModal(modalName) {
     modalName.classList.remove('show')
     modalName.classList.add('hide')
+}
+
+function showMainContainer(container, heading) {
+    container.classList.remove('hide')
+    container.classList.add('show')
+    heading.classList.remove('hide')
+    heading.classList.add('show')
+}
+
+function hideMainContainer(container, heading) {
+    container.classList.remove('show')
+    container.classList.add('hide')
+    heading.classList.remove('show')
+    heading.classList.add('hide')
 }
 
 // This event listener is listen for clicks on the external issues list info icon
@@ -608,6 +636,8 @@ document.querySelectorAll('.see-more-text').forEach(para => {
             //extModalText.innerText = modalText
             // extModalFooterText.innerText  = 'Test'
 
+            hideMainContainer(main, mainHeading)
+
              extModalSection.classList.remove('hide')
              extModalSection.classList.add('show')
         }
@@ -697,3 +727,25 @@ class ListPopulator_pestsIssues {
 
     }
 }
+
+// listen if the image in the external modal container was clicked
+extModalListContainer.addEventListener('click', (event) => {
+
+    // Get the modal container where the clicked image will be displayed
+       const modalImage = document.getElementById('full-img-modal');
+
+    if (event.target.tagName === 'IMG' && event.target.classList.contains('sign-image')) {
+        const clickedImage = event.target; // The clicked image
+
+        modalImage.src = clickedImage.src; // Use the source of the clicked image
+       
+         console.log(`You are genius Radek, this image was clicked on: ${clickedImage.src}`)
+
+         imgDisplayModal.classList.remove('hide')
+         imgDisplayModal.classList.add('show')
+    }
+})
+
+closeImgModal.addEventListener('click', ()=> {
+    closeModal(imgDisplayModal)
+})
