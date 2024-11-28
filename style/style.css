@@ -415,7 +415,7 @@ a {
 
 /* Images for the signs examples */
 .image-container {
-  width: 75%;
+  width: 80%;
   height: 20rem;
   margin: .2rem auto 1rem 1rem;
   display: flex;
@@ -425,7 +425,7 @@ a {
 }
 
 .sign-image {
-  width: 25%;
+  width: 22%;
   height: 100%;
   object-fit: cover;
   margin-right: 2rem;

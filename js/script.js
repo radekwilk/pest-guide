@@ -192,23 +192,48 @@ const pestInfo = {
             {
                 
                 findings: [
-                    {
+                    {   
+                        area: 'Physical evidence - droppings',
+                        findingList: [
+                            {
+                                lookFor: 'Size and shape',
+                                description: 'Rat droppings are typically 1/2 to 3/4 inch long. They are cylindrical, with blunt ends or pointed ends (roof rats)',
+                                exampleImages: ['rat-droppings-1.jpg', 'rat-droppings-2.webp', 'rat-droppings-4.jpg', 'roof-droppings-3.png']
+                              },
+                              {
+                                  lookFor: 'Color and Texture',
+                                  description: 'Fresh droppings are usually dark brown or black and have a soft, moist texture. Older droppings turn grayish and become dry and brittle.',
+                                  exampleImages: [ ]
+                              },
+                              {
+                                  lookFor: 'Quantity',
+                                  description: 'Rats produce a large number of droppings—30 to 50 per day. Droppings are often scattered in areas of activity like food storage, behind appliances, or along walls.',
+                                  exampleImages: []
+                              },
+                              {
+                                  lookFor: 'Location',
+                                  description: 'Near food sources, e.g, kitchens and food storage areas. Rats tend to travel the same routes repeatedly. Then can also hide under furniture, behind equipment, or in basements or on top of the false ceiling panels.',
+                                  exampleImages: []
+                              },
+                        ]
+                    },
+                    {   
                         area: 'Structural and Entry Points',
                         findingList: [
                             {
                                 lookFor: 'Holes or gaps',
                                 description: 'Inspect walls, ceilings, and floors for small holes or gaps (rats can squeeze through openings as small as 1/2 inch).',
-                                exampleImages: ['images.png', 'images.png', 'images.png']
+                                exampleImages: ['entry-point-1.jpg', 'entry-point-2.jpg', 'entry-point-3.jpg']
                               },
                               {
                                   lookFor: 'Doors and windows',
                                   description: 'Check for gaps beneath doors or damaged weatherstripping',
-                                  exampleImages: ['images.png', 'images.png', 'images.png']
+                                  exampleImages: ['open-back-door.jpg', 'pest-entry-under-door.jpg']
                               },
                               {
                                   lookFor: 'Drains and pipes',
                                   description: 'Look for access points around pipes, vents, and drains.',
-                                  exampleImages: ['images.png', 'images.png', 'images.png']
+                                  exampleImages: ['entry-point-4.png', 'entry-point-1.jpg', 'drain-rat.webp']
                               },
                               {
                                   lookFor: 'Storage areas',
