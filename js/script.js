@@ -3,6 +3,7 @@ const ratCard = document.getElementById('rat-card');
 const cardBtn = document.querySelectorAll('.card-btn')
 
 // modal for pest issues
+const modalBody_PestModal = document.getElementById('modal-body-pests')
 const mainHeading = document.getElementById('main-heading');
 const closeRat = document.getElementById('close-rat');
 const closeBtn = document.getElementById('close-btn');
@@ -197,22 +198,22 @@ const pestInfo = {
                             {
                                 lookFor: 'Holes or gaps',
                                 description: 'Inspect walls, ceilings, and floors for small holes or gaps (rats can squeeze through openings as small as 1/2 inch).',
-                                exampleImages: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+                                exampleImages: ['images.png', 'images.png', 'images.png']
                               },
                               {
                                   lookFor: 'Doors and windows',
                                   description: 'Check for gaps beneath doors or damaged weatherstripping',
-                                  exampleImages: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+                                  exampleImages: ['images.png', 'images.png', 'images.png']
                               },
                               {
                                   lookFor: 'Drains and pipes',
                                   description: 'Look for access points around pipes, vents, and drains.',
-                                  exampleImages: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+                                  exampleImages: ['images.png', 'images.png', 'images.png']
                               },
                               {
                                   lookFor: 'Storage areas',
                                   description: 'Examine areas around storage rooms or dumpsters for signs of entry.',
-                                  exampleImages: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+                                  exampleImages: ['images.png', 'images.png', 'images.png']
                               },
                         ]
                     },
@@ -222,17 +223,17 @@ const pestInfo = {
                             {
                                 lookFor: 'Kitchen and food prep areas',
                                 description: 'Inspect counters, shelves, and appliances for signs of contamination.',
-                                exampleImages: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+                                exampleImages: ['images.png', 'images.png', 'images.png']
                               },
                               {
                                   lookFor: 'Waste disposal areas',
                                   description: 'Check dumpsters and waste bins for spills or easy access points for rodents.',
-                                  exampleImages: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+                                  exampleImages: ['images.png', 'images.png', 'images.png']
                               },
                               {
                                   lookFor: 'Dry Storage',
                                   description: 'Inspect food containers and shelves for chew marks.',
-                                  exampleImages: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+                                  exampleImages: ['images.png', 'images.png', 'images.png']
                               }
                         ]
                     },
@@ -242,22 +243,22 @@ const pestInfo = {
                             {
                                 lookFor: 'Behind and under equipment',
                                 description: 'Look under refrigerators, fryers, and other heat generating units.',
-                                exampleImages: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+                                exampleImages: ['images.png', 'images.png', 'images.png']
                               },
                               {
                                   lookFor: 'Ducts and ceiling panels',
                                   description: 'Examine false ceilings and air ducts - only visual check for possible entry points.',
-                                  exampleImages: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+                                  exampleImages: ['images.png', 'images.png', 'images.png']
                               },
                               {
                                   lookFor: 'Basement',
                                   description: 'Check for signs in less frequented areas',
-                                  exampleImages: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+                                  exampleImages: ['images.png', 'images.png', 'images.png']
                               },
                               {
                                 lookFor: 'Electrical and boiler rooms',
                                 description: 'Check for signs in electrical panels and around the boiler.',
-                                exampleImages: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+                                exampleImages: ['images.png', 'images.png', 'images.png']
                             }
                         ]
                     },
@@ -304,6 +305,12 @@ cardBtn.forEach(btn => {
 
       // go thrught the info for the pest related to the button which was clicked
        listPopulator.populateLookForList(pestInfo[`${pestName}_info`]['issueList'])
+
+       // Populate the "What to Check" section
+        listPopulator.populateWhatToCheck(
+             pestInfo[`${pestName}_info`].whatToCheckHeading,
+             pestInfo[`${pestName}_info`].whatToCheck[0].findings
+         );
 
        
     })
@@ -700,9 +707,6 @@ class ListPopulator_pestsIssues {
             ul.appendChild(li)
 
         })
-
-       
-
         // add the ul to the container
         this.container.appendChild(ul)
     }
@@ -726,13 +730,108 @@ class ListPopulator_pestsIssues {
         this.container.appendChild(p_modal_text)
 
     }
+
+    // *******************************************
+     // New method for populating the "What to Check" section
+    populateWhatToCheck(heading, findings) {
+        // Create and append the heading
+        const headingElement = document.createElement('h3');
+        headingElement.textContent = heading;
+        headingElement.className = 'module-key-signs-heading';
+        this.container.appendChild(headingElement);
+
+        // Loop through findings
+        findings.forEach(section => {
+            // Create a section for each "area"
+            const sectionContainer = document.createElement('div');
+            sectionContainer.className = 'findings-section';
+
+            // Add area name as a subheading
+            const areaHeading = document.createElement('h4');
+            areaHeading.className = 'area-heading';
+            areaHeading.textContent = section.area;
+            sectionContainer.appendChild(areaHeading);
+
+            // Create a list for the "findingList"
+            const ul = document.createElement('ul');
+            ul.className = 'modal-list';
+
+            section.findingList.forEach(finding => {
+                const li = document.createElement('li');
+                li.className = 'finding-item';
+
+                // Add "lookFor" in an <h4>
+                const lookForHeading = document.createElement('h6');
+                lookForHeading.className = 'finding-look-for';
+                lookForHeading.textContent = finding.lookFor;
+                li.appendChild(lookForHeading);
+
+                // Add "description" in a <p>
+                const descriptionParagraph = document.createElement('p');
+                descriptionParagraph.className = 'finding-description';
+                descriptionParagraph.textContent = finding.description;
+                li.appendChild(descriptionParagraph);
+
+                // Add example images
+                if (finding.exampleImages && finding.exampleImages.length > 0) {
+                    const imageContainer = this.createImageGallery(finding.exampleImages, 4);
+                    li.appendChild(imageContainer);
+                }
+
+                // Append the <li> to the list
+                ul.appendChild(li);
+            });
+
+            // Append the list to the section container
+            sectionContainer.appendChild(ul);
+
+            // Append the section container to the main container
+            this.container.appendChild(sectionContainer);
+        });
+    }
+
+    // Method to create an image gallery, rendering max 4 images
+    createImageGallery(images, maxImages) {
+        const galleryContainer = document.createElement('div');
+        galleryContainer.className = 'image-container';
+
+        images.slice(0, maxImages).forEach(imageUrl => {
+            const img = document.createElement('img');
+            img.className = 'sign-image';
+            img.src = `/img/external/${imageUrl}`;
+            img.alt = 'Example Image';
+            img.loading = 'lazy'; // Improves performance for larger lists
+            galleryContainer.appendChild(img);
+        });
+
+        return galleryContainer;
+    }
+
+    // ********************************************
 }
 
 // listen if the image in the external modal container was clicked
 extModalListContainer.addEventListener('click', (event) => {
+    zoomInImage('full-img-modal', event)
+})
 
+
+
+// listen if the image in the external modal container was clicked
+modalBody_PestModal.addEventListener('click', (event) => {
+    zoomInImage('full-img-modal', event)
+})
+
+// listen for clicks on the closing mark on the zoomed in image modal, close the modal when X mark is clicked
+closeImgModal.addEventListener('click', ()=> {
+    closeModal(imgDisplayModal)
+})
+
+
+// this function will ZOOM IN the clicked image  - one of the images clicked on the Modal Info 
+function zoomInImage(container, event) {
     // Get the modal container where the clicked image will be displayed
-       const modalImage = document.getElementById('full-img-modal');
+    const modalImage = document.getElementById(container);
 
     if (event.target.tagName === 'IMG' && event.target.classList.contains('sign-image')) {
         const clickedImage = event.target; // The clicked image
@@ -744,8 +843,4 @@ extModalListContainer.addEventListener('click', (event) => {
          imgDisplayModal.classList.remove('hide')
          imgDisplayModal.classList.add('show')
     }
-})
-
-closeImgModal.addEventListener('click', ()=> {
-    closeModal(imgDisplayModal)
-})
+}
