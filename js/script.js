@@ -26,10 +26,16 @@ const closeFooterBtn = document.getElementById('footer-close-btn')
 const imgDisplayModal = document.getElementById('img-display-modal')
 const closeImgModal = document.getElementById('close-btn-img')
 
+
+// to track the clicks of info button clicks and the display of the image hoverImgStatus = {
+   // Tracks the currently clicked button's ID btnClicked: 0,   
+  // Tracks whether the image is currently displayed  displayed: false 
+// };
+
+// Object to track the state of each button
 const hoverImgStatus = {
-    btnClicked: 0,
-    displayed: false
-} //we need this variable to control the toggle for the images
+    buttons: {} // Stores the status of each button by ID (e.g., {1: true, 2: false})
+};
 
 const dumpster = document.querySelector('.exterior-dumpster');// this need to be changed later
 
@@ -345,20 +351,12 @@ cardBtn.forEach(btn => {
 
 // This is the button to close the modal for cards
 closeRat.addEventListener('click', ()=> {
-    // main.classList.remove('hide')
-    // main.classList.add('show')
-    // mainHeading.classList.remove('hide')
-    // mainHeading.classList.add('show')
-    // ratModal.classList.remove('show')
-    // ratModal.classList.add('hide')
 
     showMainContainer(main, mainHeading)
     closeModal(ratModal)
 })
 
 closeBtn.addEventListener('click',()=> {
-    // extModalSection.classList.remove('show')
-    // extModalSection.classList.add('hide')
     showMainContainer(main, mainHeading)
     closeModal(extModalSection)
 })
@@ -371,15 +369,9 @@ closeFooterBtn.addEventListener('click', (event) => {
 
 closeFooterBtnRat.addEventListener('click',(event)=> {
     event.preventDefault()
-    // main.classList.remove('hide')
-    // main.classList.add('show')
-    // mainHeading.classList.remove('hide')
-    // mainHeading.classList.add('show')
 
     showMainContainer(main, mainHeading)
     closeModal(ratModal)
-    // ratModal.classList.remove('show')
-    // ratModal.classList.add('hide')
 })
 
 // function to close the modal
@@ -402,6 +394,21 @@ function hideMainContainer(container, heading) {
     heading.classList.add('hide')
 }
 
+// Function to toggle image visibility
+function toggleImage(IDNumber) {
+    // Initialize the status for this button if it hasn't been clicked before
+    if (hoverImgStatus.buttons[IDNumber] === undefined) {
+        hoverImgStatus.buttons[IDNumber] = false;
+    }
+
+    // Toggle the current button's status
+    hoverImgStatus.buttons[IDNumber] = !hoverImgStatus.buttons[IDNumber];
+
+    // Log the current state for debugging
+    console.log(`Button ${IDNumber}: ${hoverImgStatus.buttons[IDNumber] ? 'Visible' : 'Hidden'}`);
+
+}
+
 // This event listener is listen for clicks on the external issues list info icon
 document.querySelectorAll('.img-icon').forEach((el)=> {
    el.addEventListener('click',()=> {
@@ -409,32 +416,21 @@ document.querySelectorAll('.img-icon').forEach((el)=> {
     let IDNumber = elID.split('-',2)
     IDNumber = IDNumber[1]
     
+    toggleImage(IDNumber)
 
-    // change the status of the hoverImg variable & display or hide the hover image accordingly
-    if (hoverImgStatus.btnClicked === 0) {
-        hoverImgStatus.btnClicked = IDNumber
-        hoverImgStatus.displayed = true
-    } else if(hoverImgStatus.btnClicked > 0 && hoverImgStatus.btnClicked === IDNumber) {
-        hoverImgStatus.btnClicked = 0
-        hoverImgStatus.displayed = false
-    } else if(hoverImgStatus.btnClicked > 0 && hoverImgStatus.btnClicked !== IDNumber) {
-        hoverImgStatus.btnClicked = IDNumber
-        hoverImgStatus.displayed = true
-    }
-    
     // set the image path based on the number extracted from the clicked info button
     const newBackgroundImage = `url(../img/external/external-img-${IDNumber}.png)`; 
     const defaultBackgroundImage = ''; // Default background (empty or a different image)
-     
 
-    //  depending on the status of the hoverImage, class hove-img-js would be added or removed
-     if(hoverImgStatus.displayed) {
-        hoverImage.classList.add('hover-img-js')
-        hoverImage.style.backgroundImage = newBackgroundImage
-     } else {
+    if(hoverImgStatus.buttons[IDNumber] === true) {
+         hoverImage.classList.add('hover-img-js')
+         hoverImage.style.backgroundImage = newBackgroundImage
+         console.log(` checking if image should be displayed (in if statement): btn clicked: ${hoverImgStatus.buttons[IDNumber]}`)
+    } else {
         hoverImage.classList.remove('hover-img-js')
         hoverImage.style.backgroundImage = defaultBackgroundImage
-     }
+        console.log(` checking if image should be displayed (in else statement): btn clicked: ${hoverImgStatus.buttons[IDNumber]}`)
+    }
      
     
 
