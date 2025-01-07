@@ -59,6 +59,10 @@ a {
   font-size: 4.5rem;
 }
 
+.h3-heading {
+  font-size: 3.5rem;
+}
+
 .main {
   width: 80%;
   margin: 6rem auto 2rem auto;
@@ -336,6 +340,12 @@ a {
   position: relative;
   width: 100%;
 }
+
+.external-options-list-item:last-child {
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .item-description {
   width: 100%;
   display: flex;
@@ -353,6 +363,10 @@ a {
   box-shadow: 0 2px 1.5rem var(--light-gray);
   border: none;
   cursor: pointer;
+}
+
+.look-for-button {
+  margin-left: 0;
 }
 
 .info-details {
@@ -440,6 +454,18 @@ a {
   transform: scale(1);
   opacity: 1;
   cursor: zoom-in;
+}
+
+.where-to-look-heading {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  margin-top: 0.2rem;
+  
+}
+.what-to-look-for {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  margin-top: 4rem;
 }
 
 /* End of external check section styling */
@@ -590,12 +616,14 @@ a {
 
 .modal-list li {
   font-size: 2rem;
-  margin-bottom: .9rem;
+  margin-bottom: 2.5rem;
 }
 
 .modal-list li h6 {
   font-size: 2.2rem;
   margin-bottom: .2rem;
+  font-weight: 600;
+  color: var(--red);
 }
 
 .module-key-signs-heading {

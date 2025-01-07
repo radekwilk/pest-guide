@@ -26,6 +26,9 @@ const closeFooterBtn = document.getElementById('footer-close-btn')
 const imgDisplayModal = document.getElementById('img-display-modal')
 const closeImgModal = document.getElementById('close-btn-img')
 
+// READ MORE button, for the LOOK FOR section:
+const lookForBtn = document.getElementById("read-more-button-6")
+
 
 // to track the clicks of info button clicks and the display of the image hoverImgStatus = {
    // Tracks the currently clicked button's ID btnClicked: 0,   
@@ -44,32 +47,32 @@ const dumpster = document.querySelector('.exterior-dumpster');// this need to be
 const externalIssues = {
     // dumpster area    
     el_1: {
-        title: 'Dumpster area - why to keep it clean and maintained?',
-        text: 'Ensuring that the external dumpster area of a restaurant is clean and well-maintained is critical for pest prevention. This area can easily attract pests if not managed properly, posing health, safety, and operational risks to the restaurant. Click on READ MORE button to learn about key reasons why maintaining a clean dumpster area is essential for pest prevention.',
+        title: 'Dumpster area - why keep it clean?',
+        text: 'A clean dumpster area helps prevent pests around a restaurant. When this area is dirty or messy, it can attract unwanted pests, which can cause health problems and affect the business. Click the Read more... button to learn why a clean dumpster area is important for keeping pests away.',
         issueList: [
-            {item_title: 'Reduces Food Sources for Pests',
-             item_text: 'Waste food scraps and residues in a dumpster attract pests like rodents, cockroaches, flies, and ants. Keeping the area clean removes potential food sources, discouraging these pests from gathering.'
+            {item_title: 'Stops feeding pests',
+             item_text: 'Food scraps in dirty dumpsters attract rats, cockroaches, and flies. A clean area means no food for pests.'
             },
-            {item_title: 'Limits Breeding Grounds',
-              item_text: 'Standing water, food remnants, and moist organic material in dumpsters or around them create ideal breeding grounds for flies and other pests. A clean and dry dumpster area minimizes these breeding opportunities.'
+            {item_title: 'Prevents pest breeding',
+              item_text: 'Wet areas and old food in dumpsters are perfect for flies to breed. Keeping the area clean and dry stops this.'
             },
-            {item_title: 'Prevents Odor Buildup',
-             item_text: 'Unclean dumpster areas often emit strong odors that attract pests from a distance. Regular cleaning reduces odor buildup, making the area less attractive to pests searching for food.'},
-             {item_title: 'Mitigates Rodent Access Points',
-              item_text: 'Rodents are highly attracted to waste areas but can also use trash buildup to access the restaurant. Keeping the dumpster area clean and removing clutter limits rodent entry points and makes the area less appealing for burrowing or nesting.'},
-            {item_title: 'Reduces Pest Infestation Spread',
-             item_text: 'Pests in the dumpster area can quickly spread to the kitchen and dining areas if they find easy access. Keeping the dumpster clean and pest-free creates a buffer zone, making it harder for pests to reach other areas of the restaurant.'
+            {item_title: 'Reduces bad smells',
+             item_text: 'Dirty dumpsters smell bad, and pests can smell these from far away. Regular cleaning keeps smells down.'},
+             {item_title: 'Blocks rats and mice',
+              item_text: 'Rats love messy waste areas and can use trash piles to get into buildings. A clean area gives them nowhere to hide or nest.'},
+            {item_title: 'Keeps pests out of the restaurant',
+             item_text: 'Pests that live in dumpsters can easily move into the restaurant. A clean dumpster area makes this harder.'
             },
-            {item_title: 'Complies with Health and Safety Regulations',
-             item_text: 'Many health codes require restaurants to maintain clean, pest-free dumpster areas. Failing to do so can lead to citations, fines, and reputational damage. Cleanliness ensures compliance and minimizes the risk of costly penalties.'
+            {item_title: 'Complies with Health and Safety regulations',
+             item_text: 'Health inspectors check dumpster areas. Keeping them clean helps the restaurant to pass inspections and avoid fines.'
             },
-            {item_title: "Protects the Restaurant\’s Reputation",
-             item_text: 'Customers and passersby may notice an unclean, pest-infested dumpster area, which can harm the restaurant’s image. Maintaining cleanliness ensures that the restaurant presents a professional, hygienic appearance, supporting customer trust and confidence.'
+            {item_title: "Protects the restaurant\’s reputation",
+             item_text: 'Customers and passersby may notice an unclean, pest-infested dumpster area, which can harm the restaurant\’s image. A clean dumpster area shows customers the restaurant cares about cleanliness. This makes them trust the restaurant more.'
             }
         ],
         bannerImg: 'external-2-long.png',
         modalTitle: 'Dumpster Area',
-        modalText: 'Keeping the dumpster area clean and well-maintained is crucial for pest prevention in a restaurant. An unclean dumpster can attract pests like rats, flies, and cockroaches, drawn by food scraps and odors. These pests not only spread diseases but can also migrate into the restaurant, creating sanitation risks and damaging the restaurant\'s reputation. Regular cleaning, secure lids, and promptly removing trash limit access to food sources, helping to keep pests away from the restaurant premises. Proper maintenance of the dumpster area is essential for meeting health standards and providing a safe, hygienic dining environment.',
+        modalText: 'Why keep your dumpster area clean? A clean dumpster area helps keep pests away from a restaurant. When dumpsters are dirty, they attract rats, flies, and cockroaches because of food waste and smells. These pests can spread germs and get into your restaurant, which is bad for business. By keeping dumpsters clean, with tight lids, and emptying them regularly, will stop pests from coming near the restaurant. This helps keep the restaurant safe and clean for customers.',
         keySignsHeading: 'What auditor should look for:',
         keySigns: [
             {
@@ -100,28 +103,30 @@ const externalIssues = {
     // Landscaping
     el_2: {
         title: 'Landscaping - why to keep it clean and maintained?',
-        text: 'Ensuring that the landscaping around a restaurant is clean and well-maintained is vital for pest prevention. Landscaping areas, like gardens, lawns, and external grounds, can harbor pests if not properly cared for, leading to potential health and operational issues for the restaurant. Here are the ten most important reasons why landscaping maintenance is critical for pest prevention:',
+        text: 'Clean and tidy landscaping helps keep pests away from a restaurant. When outdoor green areas aren\'t properly maintained, pests can live and hide there. This can lead to pest problems inside the restaurant. Click on the Read more... button to learn why looking after landscaping helps prevent pests:',
         issueList: [
-            {item_title: 'Eliminates hiding spots for pests',
-             item_text: 'Overgrown plants, shrubs, and grass provide ideal hiding places for pests like rodents, insects, and other vermin. Regular trimming and maintenance reduce these hiding spots, making it less likely that pests will congregate near the restaurant.'
+            {item_title: 'No hiding spots',
+             item_text: 'Trim plants and grass regularly. This stops pests from hiding near the restaurant.'
             },
-            {item_title: 'Prevents pest habitats near entry points',
-                item_text: 'Trees, bushes, and tall grass close to the restaurant\’s entry points can act as bridges for pests to enter the building. Proper landscaping maintenance removes these potential pathways for pests to access the restaurant.'
+             {item_title: 'Block entry points',
+              item_text: 'Keep plants away from doors and windows. This stops pests from using them to get inside.'
             },
-            {item_title: 'Reduces standing water',
-             item_text: 'Poorly maintained landscaping with stagnant water in plant containers, ponds, or areas of poor drainage can attract flies and other pests. Ensuring proper drainage and removing standing water prevents these breeding grounds.'},
-             {item_title: 'Reduces food sources for pests',
-              item_text: 'Landscaping that are not cleaned, waste accumulates and can attract pests such as flies, rodents, and cockroaches. Properly managing food waste and choosing non-fruit-bearing plants reduces potential food sources for pests.'},
-            {item_title: 'Improves pest control efficiency',
-             item_text: 'When the landscaping is clean and well-maintained, it\’s easier for pest control professionals to inspect and treat the area effectively. An overgrown or cluttered landscape makes it harder to spot signs of pest activity and can lead to less effective pest control treatments.'
+            {item_title: 'Remove Standing Water',
+             item_text: 'Don\'t let water collect in pots or puddles. This stops flies and bugs from breeding.'
             },
-            {item_title: 'Enhances the restaurant\'s reputation',
-             item_text: 'A well-maintained exterior, including the landscaping, is part of the restaurant\'s overall image. If the landscaping is clean and neat, it indicates to customers that the restaurant is conscientious about hygiene and pest prevention, improving customer trust and satisfaction.'
+            {item_title: 'Remove food sources',
+             item_text: 'Clean up outdoor waste quickly. This stops pests from finding food around the restaurant.'
+            },
+            {item_title: 'Better pest control',
+              item_text: 'Clean outdoor areas make it easier to spot and treat pest problems.'
+            },
+            {item_title: 'Good Image',
+             item_text: 'Clean outdoor areas show customers that the restaurant cares about keeping pests away.'
             },
         ],
         bannerImg: 'landscape-long.png',
         modalTitle: 'Landscaping',
-        modalText: 'Keeping the landscape around a restaurant clean and well-maintained is essential for effective pest prevention. Overgrown plants, debris, and standing water can attract pests like rodents, insects, and birds, which may eventually enter the restaurant. Untrimmed bushes and dense vegetation offer shelter and nesting sites, while unkempt areas can become breeding grounds for flies and other insects. Regular landscaping, including trimming plants, removing debris, and preventing water accumulation, helps to reduce these attractants, creating a less inviting environment for pests and ensuring a safer, more sanitary setting around the restaurant.',
+        modalText: 'Keep your landscaping areas clean to stop pests. When plants are overgrown and areas are messy, pests will come. Trim bushes, remove litter and standing water. This will help keep rats, bugs, and birds away from the restaurant.',
         keySignsHeading: 'What auditor should look for:',
         keySigns: [
             {
@@ -156,6 +161,252 @@ const externalIssues = {
                 signType: 'Food sources',
                 signDescription: 'Food debris, spilled food or litter can attract pests. Advice proper cleanliness if issues observed. '
                 ,signsImg: ['food-source-1.jpeg', 'food-source-2.jpg', 'food-source-3.jpeg']
+            },
+
+        ]
+    },
+
+    // Standing water
+    el_3: {
+        title: 'Standing Water - why keep it drained?',
+        text: 'Standing water around a restaurant attracts pests like flies, mosquitoes, and rodents. When water collects in puddles, drains, buckets, or old equipment, pests use it for drinking and breeding. When noticed, ask the team to check and fix areas where water collects to keep pests away from the restaurant. Click on the Read more... button for more information:',
+        issueList: [
+            {item_title: 'Puddles near dumpsters',
+             item_text: 'Water collecting around dumpster areas attracts pests and creates unsanitary conditions. It could be caused by uneven ground, poor drainage, or leaking dumpsters'
+            },
+             {item_title: 'Blocked drains',
+              item_text: 'Standing water from backed-up drains creates perfect breeding spots for pests and leads to bad odors. This is usually caused by food debris, leaves, trash blocking drain holes, or damaged drain covers.'
+            },
+            {item_title: 'Plant pots and buckets',
+             item_text: 'Stagnant water in outdoor containers provides drinking sources for pests and breeding grounds for mosquitoes. This happens when rain water collects in empty pots, from overflow after watering, or due to poor drainage in plant containers.'
+            },
+            {item_title: 'Old equipment left outside',
+             item_text: 'Water trapped in or under abandoned equipment creates hidden water sources that attract pests. This occurs when old equipment isn\'t properly stored, equipment covers collect rainwater, or items are left in low-lying areas.'
+            },
+            {item_title: 'Low spots in parking lots',
+              item_text: 'Water pooling in parking lot depressions becomes a constant water source for pests and breeds insects. This is typically caused by uneven pavement, settling ground, poor lot grading, or damaged asphalt.'
+            },
+        ],
+        bannerImg: 'standing-water-banner.png',
+        modalTitle: 'Standing water',
+        modalText: 'Standing water is a big problem for restaurants. It attracts flies, mosquitoes, rats and mice that can get into the building. They use this water for drinking and laying eggs. Look for and fix any place where water collects, like the list below. Regular checks and quick fixing of these problems will help keep pests away from your restaurant.',
+        keySignsHeading: 'What auditor should look for:',
+        keySigns: [
+            {
+                signType: 'Burrows and holes',
+                signDescription: 'Look for small burrows, especially near the building foundation, which could indicate rodents or other burrowing pests.',
+                signsImg: ['burrow-1.jpg', 'burrow-2.jpg', 'burrow-3.jpg']
+            },
+
+            {
+                signType: 'Gnaw marks',
+                signDescription: 'Rodents may chew on outdoor furniture, planters, or building materials. Check for gnaw marks on nearby wood, wiring, or plants.',
+                signsImg: ['chew-marks.jpg', 'marks-on-wood.jpg', 'rat-chewed-wires.jpg']
+            },
+
+            {
+                signType: 'Droppings',
+                signDescription: 'Search for droppings along the pathways, under bushes, and around outdoor waste bins, which can indicate the presence of rodents or other pests.  ',
+                signsImg: ['landscape-droppings.jpg']
+            },
+            {
+                signType: 'Standing water',
+                signDescription: 'Flies breed in standing water. Check for water build up in flower pots, clogged gutters, blocked drains or any other standing water around the restaurant.',
+                signsImg: ['standing-water.jpg', ]
+            },
+
+            {
+                signType: 'Nests',
+                signDescription: 'Look in bushes and around old equipment which might be left outdoors. It can provide shelter and harbouring conditions for rodents.',
+                signsImg: ['landscape-back-yard.jpeg', ]
+            },
+            {
+                signType: 'Food sources',
+                signDescription: 'Food debris, spilled food or litter can attract pests. Advice proper cleanliness if issues observed. '
+                ,signsImg: ['food-source-1.jpeg', 'food-source-2.jpg', 'food-source-3.jpeg']
+            },
+
+        ]
+    },
+
+    // External building maintenance
+    el_4: {
+        title: 'Building Maintenance - why keep it in good condition?',
+        text: 'Poor building maintenance around your restaurant attracts and allows pests to enter. When walls have cracks, doors have gaps, or windows are damaged, pests find easy ways into your building. Check and fix any building damage to keep pests out of your restaurant. Click Read more... button to learn why:',
+        issueList: [
+            {item_title: 'Cracks in walls',
+             item_text: 'Gaps and cracks in exterior walls give pests direct access into a restaurant. These usually occur due to building settling, weather damage, or poor repairs.'
+            },
+             {item_title: 'Door gaps',
+              item_text: 'Spaces under or around doors provide easy entry points for rodents and insects. This happens when door sweeps are worn out, doors are misaligned, or frames are damaged.'
+            },
+            {item_title: 'Window damage',
+             item_text: 'Broken seals or gaps around windows let pests enter and can also cause moisture problems. This occurs from wear and tear, weather damage, or improper installation.'
+            },
+            {item_title: 'Roof damage',
+             item_text: 'Holes or gaps in the roof give pests access to the building and can lead to water problems. This is often caused by weather damage, aging materials, or poor maintenance.'
+            },
+            {item_title: 'Utility entries',
+              item_text: 'Gaps around pipes and utility lines create perfect entry points for pests. These appear when seals deteriorate, during new installations, or from building movement.'
+            },
+        ],
+        bannerImg: 'external-building-gaps.jpg',
+        modalTitle: 'Building Maintenance',
+        modalText: 'Common issues to check:',
+        keySignsHeading: 'What auditor should look for:',
+        keySigns: [
+            {
+                signType: 'Burrows and holes',
+                signDescription: 'Look for small burrows, especially near the building foundation, which could indicate rodents or other burrowing pests.',
+                signsImg: ['burrow-1.jpg', 'burrow-2.jpg', 'burrow-3.jpg']
+            },
+
+            {
+                signType: 'Gnaw marks',
+                signDescription: 'Rodents may chew on outdoor furniture, planters, or building materials. Check for gnaw marks on nearby wood, wiring, or plants.',
+                signsImg: ['chew-marks.jpg', 'marks-on-wood.jpg', 'rat-chewed-wires.jpg']
+            },
+
+            {
+                signType: 'Droppings',
+                signDescription: 'Search for droppings along the pathways, under bushes, and around outdoor waste bins, which can indicate the presence of rodents or other pests.  ',
+                signsImg: ['landscape-droppings.jpg']
+            },
+            {
+                signType: 'Standing water',
+                signDescription: 'Flies breed in standing water. Check for water build up in flower pots, clogged gutters, blocked drains or any other standing water around the restaurant.',
+                signsImg: ['standing-water.jpg', ]
+            },
+
+            {
+                signType: 'Nests',
+                signDescription: 'Look in bushes and around old equipment which might be left outdoors. It can provide shelter and harbouring conditions for rodents.',
+                signsImg: ['landscape-back-yard.jpeg', ]
+            },
+            {
+                signType: 'Food sources',
+                signDescription: 'Food debris, spilled food or litter can attract pests. Advice proper cleanliness if issues observed. '
+                ,signsImg: ['food-source-1.jpeg', 'food-source-2.jpg', 'food-source-3.jpeg']
+            },
+
+        ]
+    },
+
+    // Old equipment storage
+    el_5: {
+        title: 'Equipment Storage - why keep it organized?',
+        text: 'Old equipment stored around the restaurant attracts pests and gives them places to hide. When equipment is left outside, gets wet, or collects debris, it becomes a perfect home for pests. By remove or properly storing all unused equipment helps to keep pests away from the restaurant. Click Read more... button to learn why:',
+        issueList: [
+            {item_title: 'Unused equipment',
+             item_text: 'Abandoned equipment outside creates perfect hiding spots and nesting areas for pests. This happens when old equipment is forgotten or waiting too long for disposal.'
+            },
+             {item_title: 'Wet equipment',
+              item_text: 'Equipment exposed to rain collects water and creates damp conditions that pests love. This occurs when items are not properly covered or stored in sheltered areas.'
+            },
+            {item_title: 'Stacked equipment',
+             item_text: 'Piles of equipment create dark spaces where pests can live and breed. This happens when items are stored without organization or proper spacing.'
+            },
+            {item_title: 'Dirty equipment',
+             item_text: 'Equipment with food residue or debris attracts pests looking for food. This occurs when items aren\'t cleaned before storage.'
+            },
+            {item_title: 'Equipment near buildings',
+              item_text: 'Equipment stored against walls creates pest highways into your restaurant. This happens when storage space is limited or items are placed without considering pest prevention.'
+            },
+        ],
+        bannerImg: 'landscape-back-yard-banner.png',
+        modalTitle: 'Old equipment storage',
+        modalText: 'Common issues to check:',
+        keySignsHeading: 'What auditor should look for:',
+        keySigns: [
+            {
+                signType: 'Burrows and holes',
+                signDescription: 'Look for small burrows, especially near the building foundation, which could indicate rodents or other burrowing pests.',
+                signsImg: ['burrow-1.jpg', 'burrow-2.jpg', 'burrow-3.jpg']
+            },
+
+            {
+                signType: 'Gnaw marks',
+                signDescription: 'Rodents may chew on outdoor furniture, planters, or building materials. Check for gnaw marks on nearby wood, wiring, or plants.',
+                signsImg: ['chew-marks.jpg', 'marks-on-wood.jpg', 'rat-chewed-wires.jpg']
+            },
+
+            {
+                signType: 'Droppings',
+                signDescription: 'Search for droppings along the pathways, under bushes, and around outdoor waste bins, which can indicate the presence of rodents or other pests.  ',
+                signsImg: ['landscape-droppings.jpg']
+            },
+            {
+                signType: 'Standing water',
+                signDescription: 'Flies breed in standing water. Check for water build up in flower pots, clogged gutters, blocked drains or any other standing water around the restaurant.',
+                signsImg: ['standing-water.jpg', ]
+            },
+
+            {
+                signType: 'Nests',
+                signDescription: 'Look in bushes and around old equipment which might be left outdoors. It can provide shelter and harbouring conditions for rodents.',
+                signsImg: ['landscape-back-yard.jpeg', ]
+            },
+            {
+                signType: 'Food sources',
+                signDescription: 'Food debris, spilled food or litter can attract pests. Advice proper cleanliness if issues observed. '
+                ,signsImg: ['food-source-1.jpeg', 'food-source-2.jpg', 'food-source-3.jpeg']
+            },
+
+        ]
+    },
+
+
+    // READ MORE SECTION
+    el_6: {
+        title: 'Dumpster area - why keep it clean?',
+        text: 'A clean dumpster area helps prevent pests around a restaurant. When this area is dirty or messy, it can attract unwanted pests, which can cause health problems and affect the business. Click the READ MORE button to learn why a clean dumpster area is important for keeping pests away.',
+        issueList: [
+            {item_title: 'Stops feeding pests',
+             item_text: 'Food scraps in dirty dumpsters attract rats, cockroaches, and flies. A clean area means no food for pests.'
+            },
+            {item_title: 'Prevents pest breeding',
+              item_text: 'Wet areas and old food in dumpsters are perfect for flies to breed. Keeping the area clean and dry stops this.'
+            },
+            {item_title: 'Reduces bad smells',
+             item_text: 'Dirty dumpsters smell bad, and pests can smell these from far away. Regular cleaning keeps smells down.'},
+             {item_title: 'Blocks rats and mice',
+              item_text: 'Rats love messy waste areas and can use trash piles to get into buildings. A clean area gives them nowhere to hide or nest.'},
+            {item_title: 'Keeps pests out of the restaurant',
+             item_text: 'Pests that live in dumpsters can easily move into the restaurant. A clean dumpster area makes this harder.'
+            },
+            {item_title: 'Complies with Health and Safety regulations',
+             item_text: 'Health inspectors check dumpster areas. Keeping them clean helps the restaurant to pass inspections and avoid fines.'
+            },
+            {item_title: "Protects the restaurant\’s reputation",
+             item_text: 'Customers and passersby may notice an unclean, pest-infested dumpster area, which can harm the restaurant\’s image. A clean dumpster area shows customers the restaurant cares about cleanliness. This makes them trust the restaurant more.'
+            }
+        ],
+        bannerImg: 'external-2-long.png',
+        modalTitle: 'Dumpster Area',
+        modalText: 'Standing water is a big problem for restaurants. It attracts flies, mosquitoes, and rats that can get into your building. They use this water for drinking and laying eggs. Look for and fix any place where water collects, like:',
+        keySignsHeading: 'What auditor should look for:',
+        keySigns: [
+            {
+                signType: 'Droppings or maggots',
+                signDescription: 'Look for rodent or insect droppings around the dumpster, as this can indicate active pests. Presence of maggots will indicate flies infestation.',
+                signsImg: ['droppings-1.jpg', 'droppings-2.jpg', 'maggots.jpg']
+            },
+
+            {
+                signType: 'Gnaw marks',
+                signDescription: 'Rats or mice often chew on dumpster lids or edges. Gnaw marks on these surfaces are sign of rodent activity',
+                signsImg: ['external-gnaw-mark-1.png','external-gnaw-mark-2.jpg', 'external-gnaw-mark-3.jpg']
+            },
+
+            {
+                signType: 'Odors and stains',
+                signDescription: 'Unusual odors or grease stains can attract pests. These are often left behind by pests marking their territory. ',
+                signsImg: []
+            },
+            {
+                signType: 'Nest materials',
+                signDescription: 'Rodents may create nests in secluded areas around dumpsters. Look for materials like shredded paper, leaves, or fabrics nearby. For example, brown rats are well known for digging and excavating extensive burrow systems for shelter, food storage and nesting',
+                signsImg: ['external-burrow.jpg']
             },
 
         ]
@@ -865,3 +1116,10 @@ function zoomInImage(container, event) {
          imgDisplayModal.classList.add('show')
     }
 }
+
+lookForBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    console.log('The FOR FOR BUTTON was clicked')
+})
+
