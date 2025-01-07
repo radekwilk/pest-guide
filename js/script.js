@@ -73,31 +73,13 @@ const externalIssues = {
         bannerImg: 'external-2-long.png',
         modalTitle: 'Dumpster Area',
         modalText: 'Why keep your dumpster area clean? A clean dumpster area helps keep pests away from a restaurant. When dumpsters are dirty, they attract rats, flies, and cockroaches because of food waste and smells. These pests can spread germs and get into your restaurant, which is bad for business. By keeping dumpsters clean, with tight lids, and emptying them regularly, will stop pests from coming near the restaurant. This helps keep the restaurant safe and clean for customers.',
-        keySignsHeading: 'What auditor should look for:',
+        keySignsHeading: 'Examples:',
         keySigns: [
             {
-                signType: 'Droppings or maggots',
-                signDescription: 'Look for rodent or insect droppings around the dumpster, as this can indicate active pests. Presence of maggots will indicate flies infestation.',
-                signsImg: ['droppings-1.jpg', 'droppings-2.jpg', 'maggots.jpg']
-            },
-
-            {
-                signType: 'Gnaw marks',
-                signDescription: 'Rats or mice often chew on dumpster lids or edges. Gnaw marks on these surfaces are sign of rodent activity',
-                signsImg: ['external-gnaw-mark-1.png','external-gnaw-mark-2.jpg', 'external-gnaw-mark-3.jpg']
-            },
-
-            {
-                signType: 'Odors and stains',
-                signDescription: 'Unusual odors or grease stains can attract pests. These are often left behind by pests marking their territory. ',
-                signsImg: []
-            },
-            {
-                signType: 'Nest materials',
-                signDescription: 'Rodents may create nests in secluded areas around dumpsters. Look for materials like shredded paper, leaves, or fabrics nearby. For example, brown rats are well known for digging and excavating extensive burrow systems for shelter, food storage and nesting',
-                signsImg: ['external-burrow.jpg']
-            },
-
+                signType: 'Litter and food around the dumpster area',
+                signDescription: 'Advice the restaurant to clean it as soon as possible',
+                signsImg: ['external-img-6.png', 'external-img-1.png', 'food-source-2.jpg']
+            }
         ]
     },
     // Landscaping
@@ -127,42 +109,13 @@ const externalIssues = {
         bannerImg: 'landscape-long.png',
         modalTitle: 'Landscaping',
         modalText: 'Keep your landscaping areas clean to stop pests. When plants are overgrown and areas are messy, pests will come. Trim bushes, remove litter and standing water. This will help keep rats, bugs, and birds away from the restaurant.',
-        keySignsHeading: 'What auditor should look for:',
+        keySignsHeading: 'Examples',
         keySigns: [
             {
-                signType: 'Burrows and holes',
-                signDescription: 'Look for small burrows, especially near the building foundation, which could indicate rodents or other burrowing pests.',
-                signsImg: ['burrow-1.jpg', 'burrow-2.jpg', 'burrow-3.jpg']
-            },
-
-            {
-                signType: 'Gnaw marks',
-                signDescription: 'Rodents may chew on outdoor furniture, planters, or building materials. Check for gnaw marks on nearby wood, wiring, or plants.',
-                signsImg: ['chew-marks.jpg', 'marks-on-wood.jpg', 'rat-chewed-wires.jpg']
-            },
-
-            {
-                signType: 'Droppings',
-                signDescription: 'Search for droppings along the pathways, under bushes, and around outdoor waste bins, which can indicate the presence of rodents or other pests.  ',
-                signsImg: ['landscape-droppings.jpg']
-            },
-            {
-                signType: 'Standing water',
-                signDescription: 'Flies breed in standing water. Check for water build up in flower pots, clogged gutters, blocked drains or any other standing water around the restaurant.',
-                signsImg: ['standing-water.jpg', ]
-            },
-
-            {
-                signType: 'Nests',
-                signDescription: 'Look in bushes and around old equipment which might be left outdoors. It can provide shelter and harbouring conditions for rodents.',
-                signsImg: ['landscape-back-yard.jpeg', ]
-            },
-            {
-                signType: 'Food sources',
-                signDescription: 'Food debris, spilled food or litter can attract pests. Advice proper cleanliness if issues observed. '
-                ,signsImg: ['food-source-1.jpeg', 'food-source-2.jpg', 'food-source-3.jpeg']
-            },
-
+                signType: 'Poor landscaping',
+                signDescription: 'Coaching is highly recommended. Advice the restaurant that the regular cleaning of litter around the restaurant is essential - waste attracts pests, and those pests will eventually find their way into your building.',
+                signsImg: ['food-source-3.jpeg', 'litter-1.webp', 'litter-landscape.webp']
+            }
         ]
     },
 
@@ -190,42 +143,13 @@ const externalIssues = {
         bannerImg: 'standing-water-banner.png',
         modalTitle: 'Standing water',
         modalText: 'Standing water is a big problem for restaurants. It attracts flies, mosquitoes, rats and mice that can get into the building. They use this water for drinking and laying eggs. Look for and fix any place where water collects, like the list below. Regular checks and quick fixing of these problems will help keep pests away from your restaurant.',
-        keySignsHeading: 'What auditor should look for:',
+        keySignsHeading: 'Examples',
         keySigns: [
             {
-                signType: 'Burrows and holes',
-                signDescription: 'Look for small burrows, especially near the building foundation, which could indicate rodents or other burrowing pests.',
-                signsImg: ['burrow-1.jpg', 'burrow-2.jpg', 'burrow-3.jpg']
-            },
-
-            {
-                signType: 'Gnaw marks',
-                signDescription: 'Rodents may chew on outdoor furniture, planters, or building materials. Check for gnaw marks on nearby wood, wiring, or plants.',
-                signsImg: ['chew-marks.jpg', 'marks-on-wood.jpg', 'rat-chewed-wires.jpg']
-            },
-
-            {
-                signType: 'Droppings',
-                signDescription: 'Search for droppings along the pathways, under bushes, and around outdoor waste bins, which can indicate the presence of rodents or other pests.  ',
-                signsImg: ['landscape-droppings.jpg']
-            },
-            {
-                signType: 'Standing water',
-                signDescription: 'Flies breed in standing water. Check for water build up in flower pots, clogged gutters, blocked drains or any other standing water around the restaurant.',
-                signsImg: ['standing-water.jpg', ]
-            },
-
-            {
-                signType: 'Nests',
-                signDescription: 'Look in bushes and around old equipment which might be left outdoors. It can provide shelter and harbouring conditions for rodents.',
-                signsImg: ['landscape-back-yard.jpeg', ]
-            },
-            {
-                signType: 'Food sources',
-                signDescription: 'Food debris, spilled food or litter can attract pests. Advice proper cleanliness if issues observed. '
-                ,signsImg: ['food-source-1.jpeg', 'food-source-2.jpg', 'food-source-3.jpeg']
-            },
-
+                signType: 'Blocked drains & standing water issues',
+                signDescription: '',
+                signsImg: ['blocked-drain.jpg', 'external-img-3.png', 'standing-water.jpg', 'landscape-water.jpg']
+            }
         ]
     },
 
@@ -253,42 +177,13 @@ const externalIssues = {
         bannerImg: 'external-building-gaps.jpg',
         modalTitle: 'Building Maintenance',
         modalText: 'Common issues to check:',
-        keySignsHeading: 'What auditor should look for:',
+        keySignsHeading: 'Examples',
         keySigns: [
             {
-                signType: 'Burrows and holes',
-                signDescription: 'Look for small burrows, especially near the building foundation, which could indicate rodents or other burrowing pests.',
-                signsImg: ['burrow-1.jpg', 'burrow-2.jpg', 'burrow-3.jpg']
-            },
-
-            {
-                signType: 'Gnaw marks',
-                signDescription: 'Rodents may chew on outdoor furniture, planters, or building materials. Check for gnaw marks on nearby wood, wiring, or plants.',
-                signsImg: ['chew-marks.jpg', 'marks-on-wood.jpg', 'rat-chewed-wires.jpg']
-            },
-
-            {
-                signType: 'Droppings',
-                signDescription: 'Search for droppings along the pathways, under bushes, and around outdoor waste bins, which can indicate the presence of rodents or other pests.  ',
-                signsImg: ['landscape-droppings.jpg']
-            },
-            {
-                signType: 'Standing water',
-                signDescription: 'Flies breed in standing water. Check for water build up in flower pots, clogged gutters, blocked drains or any other standing water around the restaurant.',
-                signsImg: ['standing-water.jpg', ]
-            },
-
-            {
-                signType: 'Nests',
-                signDescription: 'Look in bushes and around old equipment which might be left outdoors. It can provide shelter and harbouring conditions for rodents.',
-                signsImg: ['landscape-back-yard.jpeg', ]
-            },
-            {
-                signType: 'Food sources',
-                signDescription: 'Food debris, spilled food or litter can attract pests. Advice proper cleanliness if issues observed. '
-                ,signsImg: ['food-source-1.jpeg', 'food-source-2.jpg', 'food-source-3.jpeg']
-            },
-
+                signType: 'External building issues',
+                signDescription: '',
+                signsImg: ['pest-entry-under-door.jpg', 'entry-point-1.jpg', 'damaged-wall.jpg', 'cracked-wall-cockroach.png', 'Mouse-Entry-Points.jpg']
+            }
         ]
     },
 
@@ -316,53 +211,24 @@ const externalIssues = {
         bannerImg: 'landscape-back-yard-banner.png',
         modalTitle: 'Old equipment storage',
         modalText: 'Common issues to check:',
-        keySignsHeading: 'What auditor should look for:',
+        keySignsHeading: 'Examples',
         keySigns: [
             {
-                signType: 'Burrows and holes',
-                signDescription: 'Look for small burrows, especially near the building foundation, which could indicate rodents or other burrowing pests.',
-                signsImg: ['burrow-1.jpg', 'burrow-2.jpg', 'burrow-3.jpg']
-            },
-
-            {
-                signType: 'Gnaw marks',
-                signDescription: 'Rodents may chew on outdoor furniture, planters, or building materials. Check for gnaw marks on nearby wood, wiring, or plants.',
-                signsImg: ['chew-marks.jpg', 'marks-on-wood.jpg', 'rat-chewed-wires.jpg']
-            },
-
-            {
-                signType: 'Droppings',
-                signDescription: 'Search for droppings along the pathways, under bushes, and around outdoor waste bins, which can indicate the presence of rodents or other pests.  ',
-                signsImg: ['landscape-droppings.jpg']
-            },
-            {
-                signType: 'Standing water',
-                signDescription: 'Flies breed in standing water. Check for water build up in flower pots, clogged gutters, blocked drains or any other standing water around the restaurant.',
-                signsImg: ['standing-water.jpg', ]
-            },
-
-            {
-                signType: 'Nests',
-                signDescription: 'Look in bushes and around old equipment which might be left outdoors. It can provide shelter and harbouring conditions for rodents.',
-                signsImg: ['landscape-back-yard.jpeg', ]
-            },
-            {
-                signType: 'Food sources',
-                signDescription: 'Food debris, spilled food or litter can attract pests. Advice proper cleanliness if issues observed. '
-                ,signsImg: ['food-source-1.jpeg', 'food-source-2.jpg', 'food-source-3.jpeg']
-            },
-
+                signType: 'Old equipment storage',
+                signDescription: '',
+                signsImg: ['images.png', 'images.png', 'images.png']
+            }
         ]
     },
 
 
     // READ MORE SECTION
     el_6: {
-        title: 'Dumpster area - why keep it clean?',
-        text: 'A clean dumpster area helps prevent pests around a restaurant. When this area is dirty or messy, it can attract unwanted pests, which can cause health problems and affect the business. Click the READ MORE button to learn why a clean dumpster area is important for keeping pests away.',
+        title: 'Pest prevention guide - exteriors',
+        text: 'Here are key inspection points for exterior pest prevention, focusing on common restaurant pests:',
         issueList: [
-            {item_title: 'Stops feeding pests',
-             item_text: 'Food scraps in dirty dumpsters attract rats, cockroaches, and flies. A clean area means no food for pests.'
+            {item_title: 'Entry Points',
+             item_text: 'Check for gaps around utility lines, pipes, and cables entering the building - mice can squeeze through holes as small as 6mm, rats need 12mm'
             },
             {item_title: 'Prevents pest breeding',
               item_text: 'Wet areas and old food in dumpsters are perfect for flies to breed. Keeping the area clean and dry stops this.'
@@ -381,15 +247,20 @@ const externalIssues = {
              item_text: 'Customers and passersby may notice an unclean, pest-infested dumpster area, which can harm the restaurant\’s image. A clean dumpster area shows customers the restaurant cares about cleanliness. This makes them trust the restaurant more.'
             }
         ],
-        bannerImg: 'external-2-long.png',
-        modalTitle: 'Dumpster Area',
-        modalText: 'Standing water is a big problem for restaurants. It attracts flies, mosquitoes, and rats that can get into your building. They use this water for drinking and laying eggs. Look for and fix any place where water collects, like:',
+        bannerImg: 'rat-droppings-2.webp',
+        modalTitle: 'Pest prevention guide - exteriors',
+        modalText: 'Here are key inspection points for exterior pest prevention, focusing on common restaurant pests:',
         keySignsHeading: 'What auditor should look for:',
         keySigns: [
             {
-                signType: 'Droppings or maggots',
-                signDescription: 'Look for rodent or insect droppings around the dumpster, as this can indicate active pests. Presence of maggots will indicate flies infestation.',
-                signsImg: ['droppings-1.jpg', 'droppings-2.jpg', 'maggots.jpg']
+                signType: 'Droppings and Urine',
+                signDescription: 'Dark, pellet-shaped droppings along walls and corners show rats or mice are active. Fresh droppings are dark and soft. A strong, musky, ammonia-like smell, especially in enclosed areas, indicates rodent urine and heavy rodent activity',
+                signsImg: ['droppings-1.jpg', 'droppings-2.jpg', 'rat-droppings-4.jpg', 'rat-droppings.webp']
+            },
+            {
+                signType: 'Grease Marks',
+                signDescription: 'Dark, greasy marks on walls and entry points mean rats are regularly traveling these paths.',
+                signsImg: ['main_rats-signs-rat-hole-product.jpg', 'grease-marks-rats-entry.jpg', 'rat-grease-marks.png']
             },
 
             {
@@ -404,9 +275,35 @@ const externalIssues = {
                 signsImg: []
             },
             {
-                signType: 'Nest materials',
-                signDescription: 'Rodents may create nests in secluded areas around dumpsters. Look for materials like shredded paper, leaves, or fabrics nearby. For example, brown rats are well known for digging and excavating extensive burrow systems for shelter, food storage and nesting',
-                signsImg: ['external-burrow.jpg']
+                signType: 'Entry Points',
+                signDescription: 'Check for gaps around utility lines, pipes, and cables entering the building - mice can squeeze through holes as small as 6mm, rats need 12mm',
+                signsImg: ['drain-rat.webp', 'entry-point-1.jpg', 'cracked-wall-cockroach.png']
+            },
+            {
+                signType: 'Door Seals and Sweeps',
+                signDescription: 'Inspect the condition of door seals and sweeps - worn or damaged seals create entry points for rodents and insects',
+                signsImg: ['images.png', 'images.png', 'images.png']
+            },
+           
+            {
+                signType: 'Active Burrows',
+                signDescription: 'Look for smooth-edged holes in the ground near walls - these are active rat burrows, often with droppings nearby.',
+                signsImg: ['burrow-2.jpg', 'external-burrow.jpg', 'rat-holes.jpg']
+            },
+            {
+                signType: 'Drain Flies',
+                signDescription: 'Lots of small flies around drains suggest blocked or dirty drains that need cleaning',
+                signsImg: ['drain-flies-eggs.webp', 'fruit-fly-fungus-gnat-drain-fly.jpg', 'drain-fly.png']
+            },
+            {
+                signType: 'Maggots',
+                signDescription: 'Maggots (fly larvae) around your restaurant are a serious sign of fly infestation and decay. These small, white, worm-like creatures show that flies are breeding nearby. In restaurants maggots are mostly found in or around dumpsters indicate rotting food and poor waste management. This happens when bins aren\'t cleaned regularly or waste sits too long. Maggots can be also found under old equipment, indicates hidden decay or moisture',
+                signsImg: ['maggots.jpg', 'maggots-1.jpg', 'maggots-bin-.webp']
+            },
+            {
+                signType: 'Cockroach Signs',
+                signDescription: 'Look for cockroaches or their egg cases near warm, greasy areas like grease traps or dumpsters.',
+                signsImg: ['egg-cases.jpg', 'egg-shell-2.jpg', 'egg-shell-3.webp']
             },
 
         ]
@@ -676,11 +573,11 @@ document.querySelectorAll('.img-icon').forEach((el)=> {
     if(hoverImgStatus.buttons[IDNumber] === true) {
          hoverImage.classList.add('hover-img-js')
          hoverImage.style.backgroundImage = newBackgroundImage
-         console.log(` checking if image should be displayed (in if statement): btn clicked: ${hoverImgStatus.buttons[IDNumber]}`)
+        
     } else {
         hoverImage.classList.remove('hover-img-js')
         hoverImage.style.backgroundImage = defaultBackgroundImage
-        console.log(` checking if image should be displayed (in else statement): btn clicked: ${hoverImgStatus.buttons[IDNumber]}`)
+       
     }
      
     
@@ -752,7 +649,7 @@ class IssueListRenderer {
     }
 
     // Method to generate the issue list as a UL with LI items
-    renderIssueList(issueData) {
+    renderIssueList(issueData, clickedID) {
         // Create a UL element
         const ulElement = document.createElement('ul');
               ulElement.className = 'modal-list'
@@ -808,7 +705,7 @@ class IssueListRenderer {
                 imageContainer.className = 'image-container';
 
                 // Loop through the first 3 images in the signsImg array
-                keySign.signsImg.slice(0, 3).forEach(imgSrc => {
+                keySign.signsImg.slice(0, 5).forEach(imgSrc => {
                     const imgElement = document.createElement('img');
                     const imgPath = `/img/external/${imgSrc}` //set the path of the image
                     imgElement.src = imgPath; // Set the source of the image
@@ -834,9 +731,10 @@ class IssueListRenderer {
 
         // Append the UL to the specified container
         
-        this.container.appendChild(ulElement);
-        this.container.appendChild(keySignsHeadingElement)
-        this.container.appendChild(ulKeyIssuesContainer)
+            this.container.appendChild(ulElement);
+            this.container.appendChild(keySignsHeadingElement)
+            this.container.appendChild(ulKeyIssuesContainer)
+        
        
        
     }
@@ -883,6 +781,14 @@ document.querySelectorAll('.see-more-text').forEach(para => {
         //  need the button ID to display the modal with correct information
         let btnID = `read-more-button-${IDNumber}`
 
+        if(para.name) {
+            let btnData = para.name 
+        } else  {
+            btnData = false
+        }
+
+
+
         //check if button is clicked
         if (event.target && event.target.matches(`#${btnID}`)) {
 
@@ -898,8 +804,8 @@ document.querySelectorAll('.see-more-text').forEach(para => {
             //get the modal title and the general text
             externalIssuesListGenerator.renderTitleAndText(externalIssues[issueNumber])
 
-            //get the list of the possible external issues
-            externalIssuesListGenerator.renderIssueList(externalIssues[issueNumber])
+            //get the list of the possible external issues (ID number is to check if the button with ID == 6 was clicked )
+            externalIssuesListGenerator.renderIssueList(externalIssues[issueNumber], btnData)
 
             // get the info about the image name for the given external issue
             const headerImg = externalIssues[issueNumber]['bannerImg'] 
@@ -1119,7 +1025,46 @@ function zoomInImage(container, event) {
 
 lookForBtn.addEventListener('click', (e) => {
     e.preventDefault()
-
     console.log('The FOR FOR BUTTON was clicked')
-})
+
+        //  need the button ID to display the modal with correct information
+        let btnID = lookForBtn.name   
+        let IDNumber = 6   
+
+            // this variable will give us element number needed to retrieve info from class with all info
+            let issueNumber = `el_${IDNumber}`   
+            
+            // clear all the HTML in the MODAL body container
+            extModalListContainer.innerHTML = ''
+            
+            // this class will run the method to list all of the possible issues
+            const externalIssuesListGenerator = new IssueListRenderer('modal-list-issues-external')
+
+            //get the modal title and the general text
+            externalIssuesListGenerator.renderTitleAndText(externalIssues[issueNumber])
+
+            //get the list of the possible external issues
+            externalIssuesListGenerator.renderIssueList(externalIssues[issueNumber], btnID)
+
+            // get the info about the image name for the given external issue
+            const headerImg = externalIssues[issueNumber]['bannerImg'] 
+            const title = externalIssues[issueNumber]['modalTitle']
+            const modalText = externalIssues[issueNumber]['modalText']
+
+            
+
+            // use the fillModalData function to fill all the information on the Modal for external issues
+            fillModalData(headerImg, extModalHeader)
+
+            //extModalTitle.innerText = title
+            //extModalText.innerText = modalText
+            // extModalFooterText.innerText  = 'Test'
+
+            hideMainContainer(main, mainHeading)
+
+             extModalSection.classList.remove('hide')
+             extModalSection.classList.add('show')
+        })
+    
+
 
