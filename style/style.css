@@ -382,6 +382,13 @@ a {
    transition: all 0.3s linear;
 }
 
+
+.list-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-right: 1rem;
+}
+
 .img-icon:hover {
   transform: scale(1);
   box-shadow: 0 2px .5rem var(--light-gray);
@@ -617,6 +624,7 @@ a {
 .modal-list li {
   font-size: 2rem;
   margin-bottom: 2.5rem;
+  vertical-align: middle;
 }
 
 .modal-list li h6 {
@@ -624,6 +632,10 @@ a {
   margin-bottom: .2rem;
   font-weight: 600;
   color: var(--red);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: .3rem 0;
 }
 
 .module-key-signs-heading {
@@ -689,5 +701,20 @@ a {
   height: 102%;
   object-fit: cover;
   overflow: hidden;
+}
+
+.page-footer {
+  background-color: var(--light-blue);
+  display: flex;
+  justify-content: flex-start;
+  height: 8rem;
+  align-items: center;
+  font-size: 1.8rem;
+  padding: 2rem;
+}
+
+.footer-link {
+  color: var(--red);
+  margin-left:1.2rem;
 }
 

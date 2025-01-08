@@ -72,7 +72,7 @@ const externalIssues = {
         ],
         bannerImg: 'external-2-long.png',
         modalTitle: 'Dumpster Area',
-        modalText: 'Why keep your dumpster area clean? A clean dumpster area helps keep pests away from a restaurant. When dumpsters are dirty, they attract rats, flies, and cockroaches because of food waste and smells. These pests can spread germs and get into your restaurant, which is bad for business. By keeping dumpsters clean, with tight lids, and emptying them regularly, will stop pests from coming near the restaurant. This helps keep the restaurant safe and clean for customers.',
+        modalText: 'Why keep the dumpster area clean? A clean dumpster area helps keep pests away from a restaurant. When dumpsters are dirty, they attract rats, flies, and cockroaches because of food waste and smells. These pests can spread germs and get into the restaurant, which is bad for business. By keeping dumpsters clean, with tight lids, and emptying them regularly, will stop pests from coming near the restaurant. This helps keep the restaurant safe and clean for customers. In summary, clean dumpster area will help with the following:',
         keySignsHeading: 'Examples:',
         keySigns: [
             {
@@ -108,7 +108,7 @@ const externalIssues = {
         ],
         bannerImg: 'landscape-long.png',
         modalTitle: 'Landscaping',
-        modalText: 'Keep your landscaping areas clean to stop pests. When plants are overgrown and areas are messy, pests will come. Trim bushes, remove litter and standing water. This will help keep rats, bugs, and birds away from the restaurant.',
+        modalText: 'Keep your landscaping areas clean to stop pests. When plants are overgrown and areas are messy, pests will come. Trim bushes, remove litter and standing water. This will help keep rats, bugs, and birds away from the restaurant. In summary, advice the restaurant to follow these steps to maintain the landscaping:',
         keySignsHeading: 'Examples',
         keySigns: [
             {
@@ -142,7 +142,7 @@ const externalIssues = {
         ],
         bannerImg: 'standing-water-banner.png',
         modalTitle: 'Standing water',
-        modalText: 'Standing water is a big problem for restaurants. It attracts flies, mosquitoes, rats and mice that can get into the building. They use this water for drinking and laying eggs. Look for and fix any place where water collects, like the list below. Regular checks and quick fixing of these problems will help keep pests away from your restaurant.',
+        modalText: 'Standing water is a big problem for restaurants. It attracts flies, mosquitoes, rats and mice that can get into the building. They use this water for drinking and laying eggs. Look for and fix any place where water collects, like the list below. Regular checks and quick fixing of these problems will help keep pests away from the restaurant.',
         keySignsHeading: 'Examples',
         keySigns: [
             {
@@ -230,20 +230,17 @@ const externalIssues = {
             {item_title: 'Entry Points',
              item_text: 'Check for gaps around utility lines, pipes, and cables entering the building - mice can squeeze through holes as small as 6mm, rats need 12mm'
             },
-            {item_title: 'Prevents pest breeding',
-              item_text: 'Wet areas and old food in dumpsters are perfect for flies to breed. Keeping the area clean and dry stops this.'
+            {item_title: 'Potential pest breeding areas',
+              item_text: 'Check if there any wet areas or any old food present in dumpsters area. These are perfect for flies to breed. Keeping the area clean and dry stops this.'
             },
-            {item_title: 'Reduces bad smells',
+            {item_title: 'Check for any bad smells',
              item_text: 'Dirty dumpsters smell bad, and pests can smell these from far away. Regular cleaning keeps smells down.'},
-             {item_title: 'Blocks rats and mice',
+             {item_title: 'Check for rats and mice nesting',
               item_text: 'Rats love messy waste areas and can use trash piles to get into buildings. A clean area gives them nowhere to hide or nest.'},
-            {item_title: 'Keeps pests out of the restaurant',
-             item_text: 'Pests that live in dumpsters can easily move into the restaurant. A clean dumpster area makes this harder.'
-            },
-            {item_title: 'Complies with Health and Safety regulations',
+            {item_title: 'Help the restaurant to comply with Health and Safety regulations',
              item_text: 'Health inspectors check dumpster areas. Keeping them clean helps the restaurant to pass inspections and avoid fines.'
             },
-            {item_title: "Protects the restaurant\’s reputation",
+            {item_title: "Help restaurant to protects the restaurant\’s reputation",
              item_text: 'Customers and passersby may notice an unclean, pest-infested dumpster area, which can harm the restaurant\’s image. A clean dumpster area shows customers the restaurant cares about cleanliness. This makes them trust the restaurant more.'
             }
         ],
@@ -662,10 +659,20 @@ class IssueListRenderer {
         issueData.issueList.forEach(issue => {
             // Create LI element for each issue
             const liElement = document.createElement('li');
-            
-            // Create H6 element for the issue title
-            const titleElement = document.createElement('h6');
-            titleElement.textContent = issue.item_title;
+
+             // Create H6 element for the issue title
+              const titleElement = document.createElement('h6');
+        
+             // Create and add the arrow icon inside the title
+             const iconElement = document.createElement('img');
+             iconElement.src = '/img/icons/arrow.png';
+             iconElement.alt = 'Arrow icon';
+             iconElement.className = 'list-icon';
+             titleElement.appendChild(iconElement);
+        
+           // Add the text to the title element
+            const titleText = document.createTextNode(issue.item_title);
+            titleElement.appendChild(titleText);
             
             // Create P element for the issue text
             const textElement = document.createElement('p');
@@ -742,7 +749,7 @@ class IssueListRenderer {
 
 }
 
-
+// This class is called when the READ MORE... buttons is clicked
 class renderSeeMoreBox {
     constructor(seeMoreBox, boxId) {
         this.boxId = boxId
