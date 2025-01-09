@@ -718,3 +718,14 @@ a {
   margin-left:1.2rem;
 }
 
+/* INTERIOR AREA STYLING */
+.restaurant-interior {
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url(../img/kitchen-plan.jpg);
+  background-size: cover;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+/* INTERIOR AREA STYLING */
