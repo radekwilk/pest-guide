@@ -178,7 +178,7 @@ const externalIssues = {
 
 
     // READ MORE SECTION
-    el_6: {
+    look_for_external: {
         title: 'Pest prevention guide - exteriors',
         text: 'Here are key inspection points for exterior pest prevention, focusing on common restaurant pests:',
         issueList: [

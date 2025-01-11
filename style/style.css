@@ -242,6 +242,8 @@ a {
   transition: opacity 0.6s linear, visibility 0.6s linear; 
 }
 
+
+/* THIS IS FOR THE EXTERNAL SECTION */
 .exterior-dumpster {
   top: 1rem;
   left: 1rem;
@@ -320,6 +322,117 @@ a {
   top: 70%;
   left: 70%;
 }
+
+/* END OF STYLING FOR THE EXTERNAL SECTION  - */
+
+
+/* INTERIOR AREA STYLING */
+.restaurant-interior {
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url(../img/kitchen-plan.jpg);
+  background-size: contain;
+  overflow: hidden;
+  object-fit: contain;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+/* INTERIOR AREA STYLING */
+
+/* THIS IS FOR THE INTERNAL SECTION */
+
+
+/* for hover over the number 1 dry storage */
+.internal-dry-storage:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/internal/internal-dry-storage.webp);
+}
+
+/* for hover over the number 2 for food-prep area */
+.internal-food-prep-area:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/internal/droppings-around-fryers.webp);
+}
+
+/* for hover over the number 3 for dishwashing  area */
+.internal-dishwashing:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/internal/dishwashing.jpg);
+}
+
+/* for hover over the number 4 receiving bay / back door */
+.internal-receiving:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/internal/bck-door-dropings.jpg);
+}
+
+/* for hover over the number 5 for soft serve / beverage machine */
+.internal-soft-serve:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/internal/fly-in-drink.webp);
+}
+
+/* for hover over the number 6 for boiler room / electrical cupboard */
+.internal-boiler-room:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/internal/electric-cupboard.webp);
+}
+
+/* for hover over the number 7 for internal waste storage */
+.internal-waste:hover ~.hover-img {
+  opacity: 1;
+  visibility: visible;
+  background-image: url(../img/internal/bin-room-droppings.webp)
+}
+
+/* This bit is for the click event listener */
+.hover-img-js {
+  opacity: 1;
+  visibility: visible;
+}  
+
+.internal-dry-storage {
+  bottom: 10%;
+  left: 10%;
+}
+
+.internal-food-prep-area {
+  top: 8%;
+  right: 45%;
+}
+
+.internal-dishwashing {
+  top: 15%;
+  right: 8%;
+  z-index: 10;
+}
+
+.internal-receiving {
+  top: 35%;
+  right: 8%;
+}
+
+.internal-soft-serve {
+  top: 5%;
+  left: 10%;
+}
+
+.internal-boiler-room {
+  top: 55%;
+  right: 8%;
+}
+
+.internal-waste {
+  top: 82%;
+  right: 6%;
+}
+
+/* END OF STYLING FOR THE INTERNAL SECTION  - */
 
 .exterior-options {
   padding: 2rem;
@@ -718,14 +831,3 @@ a {
   margin-left:1.2rem;
 }
 
-/* INTERIOR AREA STYLING */
-.restaurant-interior {
-  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url(../img/kitchen-plan.jpg);
-  background-size: cover;
-  overflow: hidden;
-  object-fit: cover;
-  position: relative;
-  background-repeat: no-repeat;
-}
-
-/* INTERIOR AREA STYLING */

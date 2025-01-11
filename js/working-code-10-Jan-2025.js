@@ -690,74 +690,48 @@ function zoomInImage(container, event) {
 }
 
 //This is when we click the button 
-//lookForBtn.addEventListener('click', (e) => {
-//    e.preventDefault()
-//    console.log('The FOR FOR BUTTON was clicked')
+lookForBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log('The FOR FOR BUTTON was clicked')
 
-        
-// })
+        //  need the button ID to display the modal with correct information
+        let btnID = lookForBtn.name   
+        console.log(`The anf the LOOK FOR BTN btnName: ${btnID}`)
+        let IDNumber = 6   
 
-// This is event listener for clicks on the look for button
-document.querySelectorAll('.look-for-button').forEach(btn => {
-    btn.addEventListener('click', (event)=> { 
-     event.preventDefault()
-     let lookForLocation = btn.dataset.lookfor
+            // this variable will give us element number needed to retrieve info from class with all info
+            let issueNumber = `el_${IDNumber}`   
+            
+            // clear all the HTML in the MODAL body container
+            extModalListContainer.innerHTML = ''
+            
+            // this class will run the method to list all of the possible issues
+            const externalIssuesListGenerator = new IssueListRenderer('modal-list-issues-external')
 
-    clickedLookForButton(lookForLocation)
-
-     console.log(`This is the button ID: ${btn.id} and this is the dataset name: ${lookForLocation}`)
-
-    })
-})
-
-const clickedLookForButton = (location) => {
-
-      let issueNumber  = `look_for_${location}` // this variable will help to determine if external or internal issues we are trying to pull
-
-        // clear all the HTML in the MODAL body container
-        extModalListContainer.innerHTML = ''
-
-        // this class will run the method to list all of the possible issues
-        const externalIssuesListGenerator = new IssueListRenderer('modal-list-issues-external')
-
-        //get the modal title and the general text
-        if(location == 'external') {
+            //get the modal title and the general text
             externalIssuesListGenerator.renderTitleAndText(externalIssues[issueNumber])
-        } else if(location == 'internal') {
-            externalIssuesListGenerator.renderTitleAndText(InternalIssues[issueNumber])
-        }
 
-        //get the list of the possible external issues
-        if(location == 'external') {
+            //get the list of the possible external issues
+            //externalIssuesListGenerator.renderIssueList(externalIssues[issueNumber], btnID)
             externalIssuesListGenerator.renderIssueList(externalIssues[issueNumber])
-        } else if(location == 'internal') {
-            externalIssuesListGenerator.renderIssueList(InternalIssues[issueNumber])
-        }
 
-        // get the info about the image name for the given external issue
-        let headerImg 
-        let title 
-        let modalText 
+            // get the info about the image name for the given external issue
+            const headerImg = externalIssues[issueNumber]['bannerImg'] 
+            const title = externalIssues[issueNumber]['modalTitle']
+            const modalText = externalIssues[issueNumber]['modalText']
 
-        if(location == 'external') {
-            headerImg = externalIssues[issueNumber]['bannerImg'] 
-            title = externalIssues[issueNumber]['modalTitle']
-            modalText = externalIssues[issueNumber]['modalText']
-        } else if(location == 'internal') {
-            headerImg = InternalIssues[issueNumber]['bannerImg'] 
-            title = InternalIssues[issueNumber]['modalTitle']
-            modalText = InternalIssues[issueNumber]['modalText']
-        }
-        
-        // use the fillModalData function to fill all the information on the Modal for external issues
-        fillModalData(headerImg, extModalHeader)
+            
 
-        extModalTitle.innerText = title
-        extModalText.innerText = modalText
-        // extModalFooterText.innerText  = 'Test'
+            // use the fillModalData function to fill all the information on the Modal for external issues
+            fillModalData(headerImg, extModalHeader)
 
-        hideMainContainer(main, mainHeading)
+            //extModalTitle.innerText = title
+            //extModalText.innerText = modalText
+            // extModalFooterText.innerText  = 'Test'
 
-        extModalSection.classList.remove('hide')
-        extModalSection.classList.add('show')
-}
+            hideMainContainer(main, mainHeading)
+
+             extModalSection.classList.remove('hide')
+             extModalSection.classList.add('show')
+        })
+    

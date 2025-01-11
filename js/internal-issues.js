@@ -1,6 +1,6 @@
 // This class holds al the required info about the external issue to look for - this data is used to render information on the modals
 const InternalIssues = {
-    // dumpster area    
+    // Dry storage area    
     internal_1: {
         title: 'Dry storage area - Why keep the dry storage area clean?',
         text: 'A clean dumpster area helps prevent pests around a restaurant. When this area is dirty or messy, it can attract unwanted pests, which can cause health problems and affect the business. Click the Read more... button to learn why a clean dumpster area is important for keeping pests away.',
@@ -39,10 +39,10 @@ const InternalIssues = {
             }
         ]
     },
-    // Landscaping
+    // Food prep / kitchen area
     internal_2: {
-        title: 'Landscaping - why to keep it clean and maintained?',
-        text: 'Clean and tidy landscaping helps keep pests away from a restaurant. When outdoor green areas aren\'t properly maintained, pests can live and hide there. This can lead to pest problems inside the restaurant. Click on the Read more... button to learn why looking after landscaping helps prevent pests:',
+        title: 'Food prep areas - Why keep the prep area clean?',
+        text: 'Common place for pest looking for food. Click on the Read more... button to learn more:',
         issueList: [
             {item_title: 'No hiding spots',
              item_text: 'Trim plants and grass regularly. This stops pests from hiding near the restaurant.'
@@ -64,8 +64,8 @@ const InternalIssues = {
             },
         ],
         bannerImg: 'landscape-long.png',
-        modalTitle: 'Landscaping',
-        modalText: 'Keep your landscaping areas clean to stop pests. When plants are overgrown and areas are messy, pests will come. Trim bushes, remove litter and standing water. This will help keep rats, bugs, and birds away from the restaurant. In summary, advice the restaurant to follow these steps to maintain the landscaping:',
+        modalTitle: 'Food prep areas',
+        modalText: 'A clean kitchen prep area is essential for preventing pest activity where food is prepared. When equipment isn\'t properly cleaned or grease builds up, it attracts pests like cockroaches and flies that can contaminate food preparation surfaces. Regular cleaning and maintenance of prep areas stops pests from finding food and hiding spots. Here\'s why proper prep area cleaning is crucial:',
         keySignsHeading: 'Examples',
         keySigns: [
             {
@@ -178,11 +178,79 @@ const InternalIssues = {
         ]
     },
 
+     // Old equipment storage
+     internal_6: {
+        title: 'Equipment Storage - why keep it organized?',
+        text: 'Old equipment stored around the restaurant attracts pests and gives them places to hide. When equipment is left outside, gets wet, or collects debris, it becomes a perfect home for pests. By remove or properly storing all unused equipment helps to keep pests away from the restaurant. Click Read more... button to learn why:',
+        issueList: [
+            {item_title: 'Unused equipment',
+             item_text: 'Abandoned equipment outside creates perfect hiding spots and nesting areas for pests. This happens when old equipment is forgotten or waiting too long for disposal.'
+            },
+             {item_title: 'Wet equipment',
+              item_text: 'Equipment exposed to rain collects water and creates damp conditions that pests love. This occurs when items are not properly covered or stored in sheltered areas.'
+            },
+            {item_title: 'Stacked equipment',
+             item_text: 'Piles of equipment create dark spaces where pests can live and breed. This happens when items are stored without organization or proper spacing.'
+            },
+            {item_title: 'Dirty equipment',
+             item_text: 'Equipment with food residue or debris attracts pests looking for food. This occurs when items aren\'t cleaned before storage.'
+            },
+            {item_title: 'Equipment near buildings',
+              item_text: 'Equipment stored against walls creates pest highways into your restaurant. This happens when storage space is limited or items are placed without considering pest prevention.'
+            },
+        ],
+        bannerImg: 'landscape-back-yard-banner.png',
+        modalTitle: 'Old equipment storage',
+        modalText: 'Common issues to check:',
+        keySignsHeading: 'Examples',
+        keySigns: [
+            {
+                signType: 'Old equipment storage',
+                signDescription: '',
+                signsImg: ['images.png', 'images.png', 'images.png']
+            }
+        ]
+    },
+
+     // Old equipment storage
+     internal_7: {
+        title: 'Equipment Storage - why keep it organized?',
+        text: 'Old equipment stored around the restaurant attracts pests and gives them places to hide. When equipment is left outside, gets wet, or collects debris, it becomes a perfect home for pests. By remove or properly storing all unused equipment helps to keep pests away from the restaurant. Click Read more... button to learn why:',
+        issueList: [
+            {item_title: 'Unused equipment',
+             item_text: 'Abandoned equipment outside creates perfect hiding spots and nesting areas for pests. This happens when old equipment is forgotten or waiting too long for disposal.'
+            },
+             {item_title: 'Wet equipment',
+              item_text: 'Equipment exposed to rain collects water and creates damp conditions that pests love. This occurs when items are not properly covered or stored in sheltered areas.'
+            },
+            {item_title: 'Stacked equipment',
+             item_text: 'Piles of equipment create dark spaces where pests can live and breed. This happens when items are stored without organization or proper spacing.'
+            },
+            {item_title: 'Dirty equipment',
+             item_text: 'Equipment with food residue or debris attracts pests looking for food. This occurs when items aren\'t cleaned before storage.'
+            },
+            {item_title: 'Equipment near buildings',
+              item_text: 'Equipment stored against walls creates pest highways into your restaurant. This happens when storage space is limited or items are placed without considering pest prevention.'
+            },
+        ],
+        bannerImg: 'landscape-back-yard-banner.png',
+        modalTitle: 'Old equipment storage',
+        modalText: 'Common issues to check:',
+        keySignsHeading: 'Examples',
+        keySigns: [
+            {
+                signType: 'Old equipment storage',
+                signDescription: '',
+                signsImg: ['images.png', 'images.png', 'images.png']
+            }
+        ]
+    },
+
 
     // READ MORE SECTION
-    internal_6: {
-        title: 'Pest prevention guide - exteriors',
-        text: 'Here are key inspection points for exterior pest prevention, focusing on common restaurant pests:',
+    look_for_internal: {
+        title: 'Pest prevention guide - interiors',
+        text: 'Here are key inspection points for interior pest prevention, focusing on common restaurant pests:',
         issueList: [
             {item_title: 'Entry Points',
              item_text: 'Check for gaps around utility lines, pipes, and cables entering the building - mice can squeeze through holes as small as 6mm, rats need 12mm'
@@ -202,8 +270,8 @@ const InternalIssues = {
             }
         ],
         bannerImg: 'rat-droppings-2.webp',
-        modalTitle: 'Pest prevention guide - exteriors',
-        modalText: 'Here are key inspection points for exterior pest prevention, focusing on common restaurant pests:',
+        modalTitle: 'Pest prevention guide - internal',
+        modalText: 'Here are key inspection points for internal pest prevention, focusing on common restaurant pests:',
         keySignsHeading: 'What auditor should look for:',
         keySigns: [
             {
